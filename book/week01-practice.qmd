@@ -1,0 +1,65 @@
+---
+title: "第1回の練習問題 (統計力学Iの復習)"
+---
+
+第1回はオンデマンドで, 統計力学Iのカノニカル分布を復習する. 10月9日 (金) 1限のはじめの30分で, この練習問題と同じ形式の模擬小テストを行う. 模擬小テストは成績に入らない. 問題A, B を自分で解いてから講義に来ること.
+
+まず, 第1回の動画 (統計力学Iの概略) を見ること.
+
+```{=html}
+<video controls preload="metadata" style="width: 100%; max-width: 960px;" aria-label="第1回 概略編">
+  <source src="videos/week01.mp4" type="video/mp4">
+  <track kind="subtitles" srclang="ja" label="日本語" src="videos/week01.vtt" default>
+</video>
+```
+
+ボルツマン定数を $k_\mathrm{B}$, 逆温度を $\beta = 1/(k_\mathrm{B} T)$ とする. 次の公式は使ってよい.
+
+$$
+U = -\frac{\partial \ln Z}{\partial \beta}, \quad
+F = -k_\mathrm{B} T \ln Z, \quad
+S = -\frac{\partial F}{\partial T}, \quad
+\mu = \frac{\partial F}{\partial N}, \quad
+C = \frac{\partial U}{\partial T}
+$$
+
+$$
+\ln N! \simeq N \ln N - N \quad (\text{スターリングの公式})
+$$
+
+## 問題A: 2準位系 (目安15分) {.unnumbered}
+
+互いに独立な $N$ 個の粒子があり, 各粒子はエネルギー $0$ と $\varepsilon\ (>0)$ の2つの状態のどちらかをとる. この系が温度 $T$ の熱平衡状態にある.
+
+1. 分配関数 $Z$ を求めよ. (ヒント: 粒子は独立なので, 1粒子の分配関数 $z$ を用いて $Z = z^N$ と書ける.)
+
+2. 内部エネルギー $U$ を求めよ.
+
+3. $T \to 0$ と $T \to \infty$ での $U$ の極限を求めよ. それぞれの極限で, 各粒子がどちらの状態にどのくらいの確率でいるかを考えて, 結果の意味を説明せよ.
+
+4. 熱容量 $C$ を求めよ. また, 低温 ($k_\mathrm{B} T \ll \varepsilon$) と高温 ($k_\mathrm{B} T \gg \varepsilon$) での $C$ の近似式を求めよ.
+
+## 問題B: 古典理想気体 (目安15分) {.unnumbered}
+
+体積 $V$ の容器に入った, 質量 $m$ の $N$ 個の単原子分子からなる古典理想気体が, 温度 $T$ の熱平衡状態にある. 分配関数は
+
+$$
+Z = \frac{1}{N!} \left( \frac{V}{\lambda^3} \right)^N, \quad
+\lambda = \frac{h}{\sqrt{2 \pi m k_\mathrm{B} T}}
+$$
+
+である. $\lambda$ を熱的ド・ブロイ波長という.
+
+1. スターリングの公式を用いて, ヘルムホルツの自由エネルギーが
+
+$$
+F = -N k_\mathrm{B} T \left[ \ln \frac{V}{N \lambda^3} + 1 \right]
+$$
+
+となることを示せ.
+
+2. エントロピー $S$ を求めよ. (ヒント: $\lambda \propto T^{-1/2}$ なので, $\partial \ln \lambda / \partial T = -1/(2T)$.)
+
+3. 化学ポテンシャル $\mu$ を求めよ.
+
+4. 古典的な取り扱いがよい近似になるのは, 粒子と粒子の平均の間隔が $\lambda$ よりずっと長いとき, つまり $N \lambda^3 / V \ll 1$ のときである. このとき $\mu$ の符号は正か負か.

@@ -3,7 +3,11 @@ project:
   output-dir: _book
   render:
     - index.qmd
+    - schedule.qmd
+    - week01-practice.qmd
     - grand-canonical.qmd
+  resources:
+    - videos/
 
 lang: ja
 
@@ -12,6 +16,8 @@ book:
   author: "品岡寛"
   chapters:
     - index.qmd
+    - schedule.qmd
+    - week01-practice.qmd
     - grand-canonical.qmd
 
 format:
