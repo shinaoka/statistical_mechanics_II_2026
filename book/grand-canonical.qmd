@@ -12,7 +12,7 @@ title: "グランドカノニカル分布"
 </div>
 ```
 
-埋め込みで見られないときは [YouTube で開く](https://youtu.be/6Avtp5_ZId0). 予習動画の一覧は [再生リスト](https://www.youtube.com/playlist?list=PLb0HLNq15kGo) にある.
+埋め込みで見られないときは [YouTube で開く](https://youtu.be/6Avtp5_ZId0) か, [動画ファイル (mp4)](https://github.com/shinaoka/statistical_mechanics_II_2026/releases/download/videos/week02.mp4) と [字幕 (srt)](https://github.com/shinaoka/statistical_mechanics_II_2026/releases/download/videos/week02.srt) をダウンロードする. 予習動画の一覧は [再生リスト](https://www.youtube.com/playlist?list=PLb0HLNq15kGo) にある.
 
 動画にない節 (熱力学量の公式, 例1) は, 例2の計算に必要な道具である.
 

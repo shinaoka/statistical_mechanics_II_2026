@@ -12,7 +12,7 @@ title: "第1回の練習問題 (統計力学Iの復習)"
 </div>
 ```
 
-埋め込みで見られないときは [YouTube で開く](https://youtu.be/uyUdd91wHIU). 予習動画の一覧は [再生リスト](https://www.youtube.com/playlist?list=PLb0HLNq15kGo) にある.
+埋め込みで見られないときは [YouTube で開く](https://youtu.be/uyUdd91wHIU) か, [動画ファイル (mp4)](https://github.com/shinaoka/statistical_mechanics_II_2026/releases/download/videos/week01.mp4) と [字幕 (srt)](https://github.com/shinaoka/statistical_mechanics_II_2026/releases/download/videos/week01.srt) をダウンロードする. 予習動画の一覧は [再生リスト](https://www.youtube.com/playlist?list=PLb0HLNq15kGo) にある.
 
 ボルツマン定数を $k_\mathrm{B}$, 逆温度を $\beta = 1/(k_\mathrm{B} T)$ とする. 次の公式は使ってよい.
 
