@@ -6,8 +6,6 @@ project:
     - schedule.qmd
     - week01-practice.qmd
     - grand-canonical.qmd
-  resources:
-    - videos/
 
 lang: ja
 

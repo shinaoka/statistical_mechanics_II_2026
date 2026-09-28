@@ -7,11 +7,12 @@ title: "グランドカノニカル分布"
 この章は, 第2回の予習動画 (下) と同じ流れで進み, 動画で省いた計算や説明を補う. 先に動画を見てから読むとよい.
 
 ```{=html}
-<video controls preload="metadata" style="width: 100%; max-width: 960px;" aria-label="第2回 予習動画: グランドカノニカル分布">
-  <source src="videos/week02.mp4" type="video/mp4">
-  <track kind="subtitles" srclang="ja" label="日本語" src="videos/week02.vtt" default>
-</video>
+<div style="position: relative; width: 100%; max-width: 960px; aspect-ratio: 16 / 9;">
+  <iframe src="https://www.youtube-nocookie.com/embed/6Avtp5_ZId0?cc_load_policy=1&amp;cc_lang_pref=ja" title="第2回 予習動画: グランドカノニカル分布" style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+</div>
 ```
+
+埋め込みで見られないときは [YouTube で開く](https://youtu.be/6Avtp5_ZId0). 予習動画の一覧は [再生リスト](https://www.youtube.com/playlist?list=PLb0HLNq15kGo) にある.
 
 動画にない節 (熱力学量の公式, 例1) は, 例2の計算に必要な道具である.
 
