@@ -1,0 +1,21 @@
+project:
+  type: book
+  output-dir: _book
+  render:
+    - index.qmd
+    - grand-canonical.qmd
+
+lang: ja
+
+book:
+  title: "統計力学II 2026"
+  author: "品岡寛"
+  chapters:
+    - index.qmd
+    - grand-canonical.qmd
+
+format:
+  html:
+    theme: cosmo
+    html-math-method: mathjax
+    number-sections: false
