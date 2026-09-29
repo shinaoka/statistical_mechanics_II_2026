@@ -1,4 +1,4 @@
-"""ボーズ・アインシュタイン凝縮の図 (bec-fraction.svg, bec-mu.svg, bec-heat.svg) を作る.
+"""ボーズ・アインシュタイン凝縮の図 (bec-fraction.svg, bec-mu.svg, bec-heat.svg, bec-nk.svg) を作る.
 
 使い方: python3 book/figures/bec.py
 """
@@ -85,6 +85,47 @@ ax.set_xlim(0, 3)
 ax.set_ylim(0, 2.1)
 fig.tight_layout()
 fig.savefig(OUT / "bec-heat.svg")
+
+# T_c の上と下での <n_k> (模式図). 横軸は x = sqrt(β ε_k) ∝ |k|.
+# 点は1辺 L の箱で k = (2π n/L, 0, 0) の状態 (間隔 dx = sqrt(π) λ/L, L ≈ 17.7 λ). k = 0 の点だけ別に描く.
+# T > T_c: βμ = -0.3. T < T_c: βμ = -1/N_0 ≈ 0 (N_0 = 10^4).
+dx, N0 = 0.1, 1.0e4
+xs = np.arange(1, 26) * dx
+xc = np.linspace(0.0, 2.5, 400)
+xl = np.linspace(dx, 2.5, 400)
+cases = [(r"$T > T_\mathrm{c}$", -0.3), (r"$T < T_\mathrm{c}$", 0.0)]
+fig, axes = plt.subplots(2, 2, figsize=(8.4, 5.6), sharex=True)
+for col, (title, bmu) in enumerate(cases):
+    nk = lambda x: 1 / np.expm1(x**2 - bmu)
+    n0 = 1 / np.expm1(-bmu) if bmu < 0 else N0
+    ax = axes[0, col]
+    ax.set_title(title)
+    ax.plot(xl if bmu == 0 else xc, nk(xl if bmu == 0 else xc), color=COLORS[0], lw=1.5, alpha=0.6)
+    ax.plot(xs, nk(xs), "o", color=COLORS[0], ms=3.5)
+    ax.plot([0], [n0], "o", color=COLORS[1], ms=6, zorder=5)
+    ax.set_yscale("log")
+    ax.set_ylim(1e-2, 1e5)
+    if bmu < 0:
+        ax.annotate(r"$\langle n_0 \rangle$ は $1$ 程度", (0, n0), (0.5, 40), fontsize=10,
+                    color=COLORS[1], arrowprops=dict(arrowstyle="->", color=COLORS[1]))
+    else:
+        ax.annotate(r"$\langle n_0 \rangle = N_0 \propto V$" + "\n(桁違いに多い)", (0.02, n0), (0.45, 2e3),
+                    fontsize=10, color=COLORS[1], arrowprops=dict(arrowstyle="->", color=COLORS[1]))
+        ax.annotate(r"$\propto 1/|\boldsymbol{k}|^2$", (0.4, nk(0.4)), (0.9, 30), fontsize=10,
+                    color=COLORS[0], arrowprops=dict(arrowstyle="->", color=COLORS[0]))
+    ax = axes[1, col]
+    xb = xc[1:] if bmu == 0 else xc
+    ax.plot(xb, xb**2 * nk(xb), color=COLORS[0], lw=2)
+    ax.set_ylim(0, 1.6)
+    ax.set_xlabel(r"$\sqrt{\beta \varepsilon_{\boldsymbol{k}}} = |\boldsymbol{k}| \lambda / (2 \sqrt{\pi})$")
+    if bmu == 0:
+        ax.annotate("", (0.03, 1.55), (0.03, 0), arrowprops=dict(arrowstyle="-|>", color=COLORS[1], lw=2.5))
+        ax.text(0.12, 1.35, r"$k = 0$ に $N_0$ 個 (デルタ関数)" + "\n積分では拾えない", fontsize=10, color=COLORS[1], va="top")
+axes[0, 0].set_ylabel(r"$\langle n_{\boldsymbol{k}} \rangle$ (対数目盛)")
+axes[1, 0].set_ylabel(r"$\beta \varepsilon_{\boldsymbol{k}} \langle n_{\boldsymbol{k}} \rangle$" + "\n(" + r"$|\boldsymbol{k}|$" + " あたりの粒子数に比例)")
+axes[1, 0].set_xlim(0, 2.5)
+fig.tight_layout()
+fig.savefig(OUT / "bec-nk.svg")
 
 print("C(Tc)/NkB =", 15 / 4 * Z52 / Z32, " zeta(3/2) =", Z32, " zeta(5/2) =", Z52)
 print("C just above Tc:", c[tc > 1][:3])

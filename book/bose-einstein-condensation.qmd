@@ -95,6 +95,17 @@ $$ {#eq-bec-n0}
 
 となる. $\mu$ が $0$ にごく近ければ, $\langle n_0 \rangle$ はいくらでも大きくなれる. 積分は, この状態に集まった粒子を数えそこねていたのである.
 
+### 分布は $\boldsymbol{k} = 0$ で滑らかでなくなる
+
+@fig-bec-nk に, $T_\mathrm{c}$ の上と下での $\langle n_{\boldsymbol{k}} \rangle$ を模式的に示す. 上段は1つ1つの1粒子状態にいる粒子の数 (対数目盛) で, 点は1辺 $L$ の箱で許される $\boldsymbol{k}$ を $|\boldsymbol{k}|$ の順に並べたものである. 赤い点が $\boldsymbol{k} = 0$ の状態である.
+
+- $T > T_\mathrm{c}$ では, $\langle n_{\boldsymbol{k}} \rangle$ は $|\boldsymbol{k}|$ の滑らかな関数で, $\boldsymbol{k} = 0$ の点もその曲線の上にある. 隣どうしの点の値はほとんど変わらないので, 和を積分に直してよい.
+- $T < T_\mathrm{c}$ では $\mu \simeq 0$ なので, $\boldsymbol{k} \neq 0$ の状態の粒子数は $\langle n_{\boldsymbol{k}} \rangle \simeq k_\mathrm{B} T/\varepsilon_{\boldsymbol{k}} \propto 1/|\boldsymbol{k}|^2$ のように $\boldsymbol{k} \to 0$ で増える. それでも, 後で見るように最も小さい $|\boldsymbol{k}| = 2\pi/L$ の状態で $V^{2/3}$ 程度である. $\boldsymbol{k} = 0$ の状態だけは $N_0 \propto V$ 個の粒子を持ち, 桁違いに多い. $\langle n_{\boldsymbol{k}} \rangle$ は $\boldsymbol{k} = 0$ で滑らかにつながらず, 1点だけ飛び出している.
+
+下段は, 和を積分に直したときの被積分関数に当たる量で, $|\boldsymbol{k}|$ が $k$ と $k + dk$ の間にある状態にいる粒子の数 ($k^2 \langle n_{\boldsymbol{k}} \rangle \, dk$ に比例, 図では $k^2 \propto \beta \varepsilon_{\boldsymbol{k}}$ で表す) である. 積分が拾えるのは, この滑らかな曲線の下の面積だけである. $\boldsymbol{k} = 0$ の1点は, 積分では幅が $0$ なので重みが $0$ になり, 落ちてしまう. $N \to \infty$ の極限では, この1点は $\boldsymbol{k} = 0$ に立つデルタ関数 (幅が $0$ で面積が $N_0$ の山) と見なせる. 和を積分に直せるのは, 足す関数が滑らかなときだけである. $T < T_\mathrm{c}$ ではこれが成り立たない.
+
+![$T_\mathrm{c}$ の上と下での $\langle n_{\boldsymbol{k}} \rangle$. 横軸は $\sqrt{\beta \varepsilon_{\boldsymbol{k}}} = |\boldsymbol{k}| \lambda/(2\sqrt{\pi})$ ($|\boldsymbol{k}|$ に比例). 上段: 1つ1つの1粒子状態にいる粒子の数 (対数目盛). 点は1辺 $L = 17.7 \lambda$ の箱で許される $\boldsymbol{k} = (2\pi n/L, 0, 0)$ ($n = 0, 1, 2, \dots$) で, 赤い点が $\boldsymbol{k} = 0$. 左は $\beta \mu = -0.3$ で, $\langle n_0 \rangle = 1/(e^{0.3} - 1) \approx 2.9$. 右は $N_0 = 10^4$ とし, $\beta \mu = -1/N_0 \approx -10^{-4}$. このとき $\langle n_1 \rangle \approx 100$ である. 励起状態の粒子は $\zeta(3/2) V/\lambda^3 \approx 1.5 \times 10^4$ 個なので, $N \approx 2.5 \times 10^4$, $T \approx 0.7 \, T_\mathrm{c}$ に当たる. 下段: $|\boldsymbol{k}|$ あたりの粒子数に比例する $\beta \varepsilon_{\boldsymbol{k}} \langle n_{\boldsymbol{k}} \rangle$. 右の赤い矢印は $\boldsymbol{k} = 0$ に集まった $N_0$ 個 (デルタ関数) を表し, 高さに意味はない.](figures/bec-nk.svg){#fig-bec-nk width=90%}
+
 そこで, $\boldsymbol{k} = 0$ の項だけを和から取り出し, 残りを積分に直す.
 
 $$
