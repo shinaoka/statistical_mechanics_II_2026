@@ -36,7 +36,9 @@ $$
 
 $\phi(\varepsilon) = D(\varepsilon)$ なら $I = n$, $\phi(\varepsilon) = \varepsilon D(\varepsilon)$ なら $I = E/V$ である.
 
-**部分積分.** $f$ は階段関数に近いので, そのままでは展開しにくい. 一方, $f$ の微分 $-\partial f / \partial \varepsilon$ は, $\varepsilon = \mu$ のまわりの幅 $k_\mathrm{B} T$ 程度だけに値を持つ山である (@fig-fh-window). そこで $\Phi(\varepsilon) = \int_0^{\varepsilon} \phi(\varepsilon') \, d\varepsilon'$ として部分積分する.
+### 部分積分
+
+$f$ は階段関数に近いので, そのままでは展開しにくい. 一方, $f$ の微分 $-\partial f / \partial \varepsilon$ は, $\varepsilon = \mu$ のまわりの幅 $k_\mathrm{B} T$ 程度だけに値を持つ山である (@fig-fh-window). そこで $\Phi(\varepsilon) = \int_0^{\varepsilon} \phi(\varepsilon') \, d\varepsilon'$ として部分積分する.
 
 $$
 I = \Big[ \Phi(\varepsilon) f(\varepsilon) \Big]_0^{\infty} + \int_0^{\infty} \Phi(\varepsilon) \left( -\frac{\partial f}{\partial \varepsilon} \right) d\varepsilon
@@ -47,7 +49,9 @@ $$
 
 ![$-\partial f / \partial \varepsilon$. $\varepsilon = \mu$ のまわりの幅 $k_\mathrm{B} T$ 程度だけに値を持ち, 面積は1である.](figures/fermi-window.svg){#fig-fh-window width=55%}
 
-**テイラー展開.** 山の幅 $k_\mathrm{B} T$ の中では $\Phi$ はゆっくり変わるので, $\mu$ のまわりでテイラー展開する.
+### テイラー展開
+
+山の幅 $k_\mathrm{B} T$ の中では $\Phi$ はゆっくり変わるので, $\mu$ のまわりでテイラー展開する.
 
 $$
 \Phi(\varepsilon) = \Phi(\mu) + (\varepsilon - \mu) \phi(\mu) + \frac{1}{2} (\varepsilon - \mu)^2 \phi'(\mu) + \cdots
@@ -70,7 +74,9 @@ $$ {#eq-fh-sommerfeld}
 
 となる. これを **ゾンマーフェルト展開** という. 右辺の第1項は $T = 0$ と同じ形 ($\mu$ まで埋める) で, 第2項が温度による補正である. 次の項は $T^4$ の程度で, $T \ll T_\mathrm{F}$ では無視できる.
 
-**積分の計算.** 被積分関数は偶関数なので, $0$ から $\infty$ の2倍にして部分積分する. $e^x/(e^x+1)^2 = -\frac{d}{dx} \frac{1}{e^x + 1}$ より
+### 積分の計算
+
+被積分関数は偶関数なので, $0$ から $\infty$ の2倍にして部分積分する. $e^x/(e^x+1)^2 = -\frac{d}{dx} \frac{1}{e^x + 1}$ より
 
 $$
 \int_{-\infty}^{\infty} \frac{x^2 e^x}{(e^x + 1)^2} dx
@@ -110,7 +116,9 @@ $$ {#eq-fh-mu}
 
 $\mu$ が下がる理由は次のとおりである. 温度を上げると, $\varepsilon_\mathrm{F}$ より下から電子が抜け, 上に移る. $D(\varepsilon)$ は $\varepsilon$ とともに増えるので, $\varepsilon_\mathrm{F}$ より上の方が状態が多い. $\mu$ を $\varepsilon_\mathrm{F}$ のままにすると, 上に入る電子の数が下から抜ける数より多くなり, 粒子数が増えてしまう. 粒子数を保つには, $\mu$ を少し下げなければならない.
 
-**上がるか下がるかは状態密度の傾きで決まる.** この議論で使ったのは, $\varepsilon_\mathrm{F}$ での $D$ の傾きの符号だけである. 実際, 上の $\mu - \varepsilon_\mathrm{F}$ の式は $D'(\varepsilon_\mathrm{F})$ の符号で向きが決まる.
+### 上がるか下がるかは状態密度の傾きで決まる
+
+この議論で使ったのは, $\varepsilon_\mathrm{F}$ での $D$ の傾きの符号だけである. 実際, 上の $\mu - \varepsilon_\mathrm{F}$ の式は $D'(\varepsilon_\mathrm{F})$ の符号で向きが決まる.
 
 - $D' > 0$ (3次元の自由粒子, バンドの底の近く): $\mu$ は下がる.
 - $D' < 0$ (1次元の自由粒子, バンドの上端の近く): $\mu$ は上がる. 上に空いた状態が少ないので, 粒子数を保つには $\mu$ を上げなければならない.
@@ -151,9 +159,13 @@ $$ {#eq-fh-c-tf}
 
 ## 実際の金属
 
-**室温.** 室温の固体の比熱は, 格子振動だけでほぼ $3 N_\mathrm{atom} k_\mathrm{B}$ (デュロン・プティの法則, 1 mol あたり $3R \approx 25 \ \mathrm{J/(mol \, K)}$) である. 銅では原子1個あたり伝導電子が1個あるので, (@eq-fh-c-tf) の電子の比熱は, 1 mol あたり $\frac{\pi^2}{2} R \, T/T_\mathrm{F} \approx 0.15 \ \mathrm{J/(mol \, K)}$ ($T = 300 \ \mathrm{K}$) となり, 格子振動の $1\%$ にも満たない. 古典的に考えると, 電子も $\frac{3}{2} k_\mathrm{B}$ ずつ比熱に寄与するはずで, そうなっていないことは古典論では説明できない謎であった. フェルミ統計がその答えである.
+### 室温
 
-**低温.** 低温では, 格子振動の比熱は $T^3$ に比例して急に小さくなる (デバイの $T^3$ 則). 一方, 電子の比熱は $T$ に比例するので, ゆっくりとしか小さくならない. そのため, 数 K 以下では電子の寄与が見えるようになる. 金属の比熱は
+室温の固体の比熱は, 格子振動だけでほぼ $3 N_\mathrm{atom} k_\mathrm{B}$ (デュロン・プティの法則, 1 mol あたり $3R \approx 25 \ \mathrm{J/(mol \, K)}$) である. 銅では原子1個あたり伝導電子が1個あるので, (@eq-fh-c-tf) の電子の比熱は, 1 mol あたり $\frac{\pi^2}{2} R \, T/T_\mathrm{F} \approx 0.15 \ \mathrm{J/(mol \, K)}$ ($T = 300 \ \mathrm{K}$) となり, 格子振動の $1\%$ にも満たない. 古典的に考えると, 電子も $\frac{3}{2} k_\mathrm{B}$ ずつ比熱に寄与するはずで, そうなっていないことは古典論では説明できない謎であった. フェルミ統計がその答えである.
+
+### 低温
+
+低温では, 格子振動の比熱は $T^3$ に比例して急に小さくなる (デバイの $T^3$ 則). 一方, 電子の比熱は $T$ に比例するので, ゆっくりとしか小さくならない. そのため, 数 K 以下では電子の寄与が見えるようになる. 金属の比熱は
 
 $$
 C = \gamma T + A T^3

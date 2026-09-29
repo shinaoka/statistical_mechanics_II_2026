@@ -129,7 +129,9 @@ $$ {#eq-qd-boltzmann}
 
 ![フェルミ分布, ボーズ分布, 古典的なボルツマン分布. $\varepsilon - \mu \gg k_\mathrm{B} T$ では3つとも一致する. 網かけの範囲 ($\varepsilon < \mu$) では, ボーズ分布は定義されない.](figures/distributions.svg){#fig-distributions width=60%}
 
-**古典極限の条件.** すべての状態で (@eq-qd-boltzmann) が使えるには, エネルギーが最小の $\varepsilon_{\boldsymbol{k}} = 0$ の状態でも $\langle n \rangle \simeq e^{\beta \mu} \ll 1$ であればよい. このとき, 全粒子数は (@eq-qd-boltzmann) の和を前の章と同じように積分に直して
+### 古典極限の条件
+
+すべての状態で (@eq-qd-boltzmann) が使えるには, エネルギーが最小の $\varepsilon_{\boldsymbol{k}} = 0$ の状態でも $\langle n \rangle \simeq e^{\beta \mu} \ll 1$ であればよい. このとき, 全粒子数は (@eq-qd-boltzmann) の和を前の章と同じように積分に直して
 
 $$
 N = \sum_{\boldsymbol{k}} e^{-\beta (\varepsilon_{\boldsymbol{k}} - \mu)} = e^{\beta \mu} \sum_{\boldsymbol{k}} e^{-\beta \varepsilon_{\boldsymbol{k}}} = e^{\beta \mu} \frac{V}{\lambda^3}
@@ -156,7 +158,9 @@ $$
 
 $\langle n_{\boldsymbol{k}} \rangle$ は $\varepsilon_{\boldsymbol{k}}$ だけで決まるので, 和を $\varepsilon$ についての積分に直すと便利である. そのための道具が状態密度である.
 
-**エネルギーが $\varepsilon$ 以下の状態の数.** 前の章で見たとおり, 波数空間の体積 $d^3 k$ の中には $V d^3 k/(2\pi)^3$ 個の状態がある. $\varepsilon_{\boldsymbol{k}} \le \varepsilon$ は半径 $k = \sqrt{2 m \varepsilon}/\hbar$ の球の内側なので, その中の状態の数は
+### エネルギーが $\varepsilon$ 以下の状態の数
+
+前の章で見たとおり, 波数空間の体積 $d^3 k$ の中には $V d^3 k/(2\pi)^3$ 個の状態がある. $\varepsilon_{\boldsymbol{k}} \le \varepsilon$ は半径 $k = \sqrt{2 m \varepsilon}/\hbar$ の球の内側なので, その中の状態の数は
 
 $$
 \mathcal{N}(\varepsilon) = \frac{V}{(2\pi)^3} \cdot \frac{4\pi}{3} k^3
@@ -165,7 +169,9 @@ $$
 
 である.
 
-**状態密度.** エネルギーが $\varepsilon$ と $\varepsilon + d\varepsilon$ の間にある状態の数を $V D(\varepsilon) \, d\varepsilon$ と書き, $D(\varepsilon)$ を (単位体積あたりの) **状態密度** という. $V D(\varepsilon) = d\mathcal{N}/d\varepsilon$ より
+### 3次元の自由粒子の状態密度
+
+エネルギーが $\varepsilon$ と $\varepsilon + d\varepsilon$ の間にある状態の数を $V D(\varepsilon) \, d\varepsilon$ と書き, $D(\varepsilon)$ を (単位体積あたりの) **状態密度** という. $V D(\varepsilon) = d\mathcal{N}/d\varepsilon$ より
 
 $$
 D(\varepsilon) = \frac{1}{4\pi^2} \left( \frac{2m}{\hbar^2} \right)^{3/2} \varepsilon^{1/2} \qquad (\varepsilon \ge 0)
@@ -173,7 +179,9 @@ $$ {#eq-qd-dos}
 
 となる. 3次元の自由粒子では, 状態密度は $\sqrt{\varepsilon}$ に比例する. エネルギーが高いほど, 同じ幅 $d\varepsilon$ に入る球殻が大きくなり, 状態が多い.
 
-**一般の形.** 状態を1つずつ数えることを, デルタ関数を使って
+### 一般の形
+
+状態を1つずつ数えることを, デルタ関数を使って
 
 $$
 D(\varepsilon) = \frac{1}{V} \sum_{\boldsymbol{k}} \delta(\varepsilon - \varepsilon_{\boldsymbol{k}})
@@ -181,7 +189,9 @@ $$
 
 と書くこともできる. 両辺に $V F(\varepsilon)$ をかけて $\varepsilon$ で積分すると, 右辺は $\sum_{\boldsymbol{k}} F(\varepsilon_{\boldsymbol{k}})$ になる. この形は, $\varepsilon_{\boldsymbol{k}}$ が $\hbar^2 k^2/(2m)$ でない場合にもそのまま使える.
 
-**次元による違い.** 同じように数えると, $d$ 次元の自由粒子の状態密度 (長さ $L$, 体積 $V = L^d$ あたり) は次のようになる. 導出は演習問題とする.
+### 次元による違い
+
+同じように数えると, $d$ 次元の自由粒子の状態密度 (長さ $L$, 体積 $V = L^d$ あたり) は次のようになる. 導出は演習問題とする.
 
 | 次元 | $D(\varepsilon)$ | $\varepsilon$ への依存性 |
 |:-:|:-:|:-:|
@@ -191,9 +201,13 @@ $$
 
 まとめると $D(\varepsilon) \propto \varepsilon^{d/2 - 1}$ である. $\varepsilon \to 0$ での状態密度のふるまいは次元で大きく違い, 次の章のボーズ・アインシュタイン凝縮が起こるかどうかを左右する.
 
-**バンド端での形.** 結晶の中の電子のエネルギー $\varepsilon_{\boldsymbol{k}}$ は, 周期的なポテンシャルのためにバンドをつくり, $\hbar^2 k^2/(2m)$ とは違う形になる. それでもバンドの底 $\varepsilon_0$ の近くでは, $\varepsilon_{\boldsymbol{k}} \simeq \varepsilon_0 + \hbar^2 k^2/(2m^*)$ と展開できることが多い. $m^*$ を有効質量という. このときバンドの底の近くの状態密度は, 上の表で $m \to m^*$, $\varepsilon \to \varepsilon - \varepsilon_0$ としたもの, つまり $(\varepsilon - \varepsilon_0)^{d/2 - 1}$ に比例する. バンドの上端の近くでも同じように $(\varepsilon_1 - \varepsilon)^{d/2 - 1}$ に比例する ($\varepsilon_1$ は上端のエネルギー). 自由粒子の状態密度の形は, バンドの端での一般的な形でもある.
+### バンド端での形
 
-**状態密度の定義はいろいろある.** 「状態密度」という言葉は, 教科書や論文によって違う意味で使われる. 違いは主に2つある.
+結晶の中の電子のエネルギー $\varepsilon_{\boldsymbol{k}}$ は, 周期的なポテンシャルのためにバンドをつくり, $\hbar^2 k^2/(2m)$ とは違う形になる. それでもバンドの底 $\varepsilon_0$ の近くでは, $\varepsilon_{\boldsymbol{k}} \simeq \varepsilon_0 + \hbar^2 k^2/(2m^*)$ と展開できることが多い. $m^*$ を有効質量という. このときバンドの底の近くの状態密度は, 上の表で $m \to m^*$, $\varepsilon \to \varepsilon - \varepsilon_0$ としたもの, つまり $(\varepsilon - \varepsilon_0)^{d/2 - 1}$ に比例する. バンドの上端の近くでも同じように $(\varepsilon_1 - \varepsilon)^{d/2 - 1}$ に比例する ($\varepsilon_1$ は上端のエネルギー). 自由粒子の状態密度の形は, バンドの端での一般的な形でもある.
+
+### 状態密度の定義はいろいろある
+
+「状態密度」という言葉は, 教科書や論文によって違う意味で使われる. 違いは主に2つある.
 
 - **何あたりの量か.** 系全体の状態の数 $V D(\varepsilon)$ を状態密度と呼ぶこともあれば, この講義のように体積 $V$ で割った量を呼ぶこともある. 粒子数 $N$ で割った量 (1粒子あたり) や, 実験の表でよく使う1原子あたり, 1モルあたりの量もある. どれも $V$ や $N$ で割り方が違うだけだが, 次元も数値も変わる.
 - **スピンの縮重度を含めるか.** スピン $s$ の粒子には $g = 2s + 1$ 個のスピンの向きがある. これを含めると (@eq-qd-dos) は $g$ 倍になり

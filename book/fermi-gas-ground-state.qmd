@@ -41,7 +41,9 @@ $T \to 0$ では, フェルミ分布は $\varepsilon = \mu$ で 1 から 0 に�
 
 ![絶対零度の電子の詰まり方. 横線が1粒子状態 $\boldsymbol{k}$, 矢印がスピンの向きである. 1つの $\boldsymbol{k}$ に $\uparrow$ と $\downarrow$ の2個まで入る.](figures/filling.svg){#fig-fg-filling width=45%}
 
-**フェルミ球.** $\varepsilon_{\boldsymbol{k}} \le \varepsilon_\mathrm{F}$ は, 波数空間で半径
+### フェルミ球
+
+$\varepsilon_{\boldsymbol{k}} \le \varepsilon_\mathrm{F}$ は, 波数空間で半径
 
 $$
 k_\mathrm{F} = \frac{\sqrt{2 m \varepsilon_\mathrm{F}}}{\hbar}
@@ -51,7 +53,9 @@ $$
 
 ![フェルミ球 ($k_z = 0$ の断面). 青い点の状態が埋まっている.](figures/fermi-sphere.svg){#fig-fg-sphere width=55%}
 
-**$k_\mathrm{F}$ と密度の関係.** 球の内側の $\boldsymbol{k}$ の数は, 第3回と同じく, 球の体積を1つの状態の体積 $(2\pi)^3/V$ で割ったものである. スピンの2倍をかけて, これが $N$ に等しいので
+### $k_\mathrm{F}$ と密度の関係
+
+球の内側の $\boldsymbol{k}$ の数は, 第3回と同じく, 球の体積を1つの状態の体積 $(2\pi)^3/V$ で割ったものである. スピンの2倍をかけて, これが $N$ に等しいので
 
 $$
 N = 2 \cdot \frac{V}{(2\pi)^3} \cdot \frac{4\pi}{3} k_\mathrm{F}^3 = \frac{V k_\mathrm{F}^3}{3\pi^2}
@@ -68,7 +72,9 @@ $$ {#eq-fg-ef}
 
 ![状態密度 $D(\varepsilon)$ と, 絶対零度で埋まっている部分 (網かけ). 網かけの面積が密度 $n$ である.](figures/fermi-dos.svg){#fig-fg-dos width=55%}
 
-**フェルミエネルギーで状態密度を書く.** (@eq-fg-dos) と (@eq-fg-ef) から $\hbar$ と $m$ を消すと
+### フェルミエネルギーで状態密度を書く
+
+(@eq-fg-dos) と (@eq-fg-ef) から $\hbar$ と $m$ を消すと
 
 $$
 D(\varepsilon) = \frac{3 n}{2 \varepsilon_\mathrm{F}} \left( \frac{\varepsilon}{\varepsilon_\mathrm{F}} \right)^{1/2}, \qquad
@@ -77,7 +83,9 @@ $$ {#eq-fg-dos-ef}
 
 となる. フェルミ面での状態密度 $D(\varepsilon_\mathrm{F})$ は, 次の2つの章で重要になる.
 
-**フェルミ温度.** $T_\mathrm{F} = \varepsilon_\mathrm{F}/k_\mathrm{B}$ を **フェルミ温度** という. $T \ll T_\mathrm{F}$ なら, フェルミ分布が階段関数からずれるのは $\varepsilon_\mathrm{F}$ のまわりの幅 $k_\mathrm{B} T \ll \varepsilon_\mathrm{F}$ の範囲だけで, 系は $T = 0$ の状態に近い. このような状態を **縮退している** という.
+### フェルミ温度
+
+$T_\mathrm{F} = \varepsilon_\mathrm{F}/k_\mathrm{B}$ を **フェルミ温度** という. $T \ll T_\mathrm{F}$ なら, フェルミ分布が階段関数からずれるのは $\varepsilon_\mathrm{F}$ のまわりの幅 $k_\mathrm{B} T \ll \varepsilon_\mathrm{F}$ の範囲だけで, 系は $T = 0$ の状態に近い. このような状態を **縮退している** という.
 
 ## 金属の電子の値
 
@@ -94,7 +102,9 @@ $T_\mathrm{F}$ は金属が融ける温度よりずっと高い. 室温 ($T / T_
 
 ## 絶対零度のエネルギーと圧力
 
-**エネルギー.** $T = 0$ の全エネルギーは
+### エネルギー
+
+$T = 0$ の全エネルギーは
 
 $$
 E = V \int_0^{\varepsilon_\mathrm{F}} \varepsilon \, D(\varepsilon) \, d\varepsilon
@@ -104,7 +114,9 @@ $$ {#eq-fg-e0}
 
 である. 電子1個あたりの平均のエネルギーは $\frac{3}{5} \varepsilon_\mathrm{F}$ で, 銅では $4.2 \ \mathrm{eV}$ になる. 古典的な気体なら, 室温での1粒子あたりのエネルギーは $\frac{3}{2} k_\mathrm{B} T \approx 0.04 \ \mathrm{eV}$ で, $T \to 0$ では $0$ になる. フェルミ気体は, 絶対零度でも大きなエネルギーを持つ.
 
-**圧力.** $T = 0$ ではエントロピーが $0$ なので, 圧力は $P = -(\partial E / \partial V)_N$ で求まる. (@eq-fg-ef) より $\varepsilon_\mathrm{F} \propto n^{2/3} \propto V^{-2/3}$ なので, $E = \frac{3}{5} N \varepsilon_\mathrm{F} \propto V^{-2/3}$ である. よって
+### 圧力
+
+$T = 0$ ではエントロピーが $0$ なので, 圧力は $P = -(\partial E / \partial V)_N$ で求まる. (@eq-fg-ef) より $\varepsilon_\mathrm{F} \propto n^{2/3} \propto V^{-2/3}$ なので, $E = \frac{3}{5} N \varepsilon_\mathrm{F} \propto V^{-2/3}$ である. よって
 
 $$
 P = -\frac{\partial E}{\partial V} = \frac{2}{3} \frac{E}{V} = \frac{2}{5} n \varepsilon_\mathrm{F}
@@ -114,7 +126,9 @@ $$ {#eq-fg-p0}
 
 $PV = \frac{2}{3} E$ は, 古典理想気体の $PV = N k_\mathrm{B} T$, $E = \frac{3}{2} N k_\mathrm{B} T$ でも成り立つ関係である. 実は, $\varepsilon \propto k^2$ の理想気体では, 統計の種類や温度によらず成り立つ (演習問題で示す).
 
-**参考: 白色矮星.** 太陽程度の質量の恒星は, 燃え尽きると白色矮星になる. 白色矮星では, 自分の重力で押しつぶされようとする力を, 電子の縮退圧が支えている. 密度は水の $10^6$ 倍程度で, $T_\mathrm{F}$ は $10^9 \ \mathrm{K}$ を超える.
+### 参考: 白色矮星
+
+太陽程度の質量の恒星は, 燃え尽きると白色矮星になる. 白色矮星では, 自分の重力で押しつぶされようとする力を, 電子の縮退圧が支えている. 密度は水の $10^6$ 倍程度で, $T_\mathrm{F}$ は $10^9 \ \mathrm{K}$ を超える.
 
 ## まとめ
 
