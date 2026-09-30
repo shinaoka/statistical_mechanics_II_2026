@@ -11,6 +11,11 @@ project:
     - fermi-gas-ground-state.qmd
     - fermi-gas-heat-capacity.qmd
     - fermi-gas-pauli.qmd
+    - phase-transitions.qmd
+    - ising-mean-field.qmd
+    - landau-second-order.qmd
+    - landau-first-order.qmd
+    - ising-exact-1d.qmd
 
 lang: ja
 
@@ -27,6 +32,11 @@ book:
     - fermi-gas-ground-state.qmd
     - fermi-gas-heat-capacity.qmd
     - fermi-gas-pauli.qmd
+    - phase-transitions.qmd
+    - ising-mean-field.qmd
+    - landau-second-order.qmd
+    - landau-first-order.qmd
+    - ising-exact-1d.qmd
 
 format:
   html:
