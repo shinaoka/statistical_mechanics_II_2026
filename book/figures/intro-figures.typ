@@ -8,22 +8,23 @@
 #let c-green = rgb("#15803d")
 #let c-gray = rgb("#64748b")
 
-// 1週間の流れ: 講義 (小テスト + 解説) と演習 (各自で解く + 発表), 演習から翌週の小テストへ.
+// 1週間の流れ: 講義 (小テスト + 解き直し + 解説) と演習 (チームで解く + 発表), 演習から翌週の小テストへ.
 #let week-flow-figure() = cetz.canvas(length: 1cm, {
   import cetz.draw: *
   let u = 0.13        // 1分あたりの長さ
   let bh = 1.4
   let x0 = 3.2
-  let seg(x, y, mins, fill, body) = {
+  let seg(x, y, mins, fill, body, size: 15pt) = {
     rect((x, y), (x + mins * u, y + bh), fill: fill, stroke: 1.5pt + white)
-    content((x + mins * u / 2, y + bh / 2), align(center, text(size: 15pt, fill: white, body)))
+    content((x + mins * u / 2, y + bh / 2), align(center, text(size: size, fill: white, body)))
   }
   // 第 k 週
   content((x0 - 0.3, 4.6 + bh / 2), anchor: "east", text(size: 17pt)[講義 (1限)])
   seg(x0, 4.6, 30, c-red, [小テスト\ 30分])
-  seg(x0 + 30 * u, 4.6, 60, c-blue, [その週の内容の解説\ 60分])
+  seg(x0 + 30 * u, 4.6, 10, c-gray, [解き\ 直し], size: 12pt)
+  seg(x0 + 40 * u, 4.6, 50, c-blue, [その週の内容の解説\ 50分])
   content((x0 - 0.3, 2.6 + bh / 2), anchor: "east", text(size: 17pt)[演習 (2限)])
-  seg(x0, 2.6, 45, c-orange, [各自で解く\ 45分])
+  seg(x0, 2.6, 45, c-orange, [チームで解く\ 45分])
   seg(x0 + 45 * u, 2.6, 45, c-green, [発表と講評\ 45分])
   content((x0 + 45 * u, 6.5), text(size: 18pt, weight: "bold")[ある週の金曜日])
   // 翌週
@@ -33,7 +34,7 @@
   // 演習 → 翌週の小テスト
   line((x0 + 90 * u + 0.1, 2.6 + bh / 2), (x1 + 15 * u, 2.6 + bh / 2), (x1 + 15 * u, 4.45), mark: (end: "stealth", fill: c-red), stroke: 2.5pt + c-red)
   content((x1 + 15 * u + 0.3, 2.3), anchor: "north", text(size: 16pt, fill: c-red)[同じ型の問題])
-  content((x0 + 22 * u, 2.3), anchor: "north", text(size: 15pt, fill: c-gray)[発表者は最初に小問ごとに指名])
+  content((x0 + 45 * u, 2.3), anchor: "north", text(size: 15pt, fill: c-gray)[4チームに分かれ, 各チームから毎週2人が発表])
 })
 
 // 予習 → 講義 → 演習 → レポート → 小テスト の循環.

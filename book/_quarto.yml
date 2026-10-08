@@ -1,6 +1,8 @@
 project:
   type: book
   output-dir: _book
+  resources:
+    - videos/
   render:
     - index.qmd
     - week01-practice.qmd
