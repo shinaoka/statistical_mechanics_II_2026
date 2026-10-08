@@ -7,6 +7,7 @@ project:
     - index.qmd
     - week01-practice.qmd
     - grand-canonical.qmd
+    - week02-exercises.qmd
     - identical-particles.qmd
     - quantum-distributions.qmd
     - bose-einstein-condensation.qmd
@@ -28,6 +29,7 @@ book:
     - index.qmd
     - week01-practice.qmd
     - grand-canonical.qmd
+    - week02-exercises.qmd
     - identical-particles.qmd
     - quantum-distributions.qmd
     - bose-einstein-condensation.qmd

@@ -1,0 +1,77 @@
+---
+title: "第2回の演習問題 (グランドカノニカル分布)"
+---
+
+10月9日 (金) 2限の演習で解く. はじめの45分はチームの中で相談しながら解き, 残りの45分で発表する. 各チームが発表する小問は, 演習のはじめに2問ずつ示す. 発表する人はチームの中で決める (まだ発表していない人を優先する). 担当した小問だけでなく全部の小問を解き, 発表を聞いて答え合わせをすること. レポートは WebClass に提出する. 締切は **10月15日 (木) 23:59**.
+
+ボルツマン定数を $k_\mathrm{B}$, 逆温度を $\beta = 1/(k_\mathrm{B} T)$ とする. 次の公式は使ってよい.
+
+$$
+\Omega = -k_\mathrm{B} T \ln \Xi, \quad
+N = -\frac{\partial \Omega}{\partial \mu}, \quad
+\langle N^2 \rangle - \langle N \rangle^2 = k_\mathrm{B} T \frac{\partial \langle N \rangle}{\partial \mu}
+$$
+
+$$
+\sum_{N=0}^{\infty} \frac{x^N}{N!} = e^x, \quad
+\sum_{n=0}^{\infty} x^n = \frac{1}{1 - x} \quad (0 \le x < 1)
+$$
+
+## 問題A: 2次元の古典理想気体 (目安15分) {.unnumbered}
+
+面積 $A$ の平面の上を自由に動く, 質量 $m$ の粒子からなる2次元の古典理想気体が, 温度 $T$, 化学ポテンシャル $\mu$ の熱・粒子浴と平衡にある. 粒子数が $N$ のときの分配関数は
+
+$$
+Z(T, A, N) = \frac{1}{N!} \left( \frac{A}{\lambda^2} \right)^N, \quad
+\lambda = \frac{h}{\sqrt{2 \pi m k_\mathrm{B} T}}
+$$
+
+である.
+
+1. 大分配関数 $\Xi = \sum_{N=0}^{\infty} Z(T, A, N) \, e^{\beta \mu N}$ を求めよ.
+
+2. グランドポテンシャル $\Omega$ と粒子数 $N$ を $T, A, \mu$ で表せ. また, $\mu$ を $N$ で表せ.
+
+3. 2次元の圧力 (単位長さあたりの力) は $\Pi = -\partial \Omega / \partial A$ で与えられる. $\Pi$ を求め, 状態方程式 $\Pi A = N k_\mathrm{B} T$ が成り立つことを示せ.
+
+4. 粒子数の揺らぎ $\langle N^2 \rangle - \langle N \rangle^2$ を求めよ. また, 相対的な揺らぎ $\sqrt{\langle N^2 \rangle - \langle N \rangle^2} / \langle N \rangle$ を $\langle N \rangle$ で表し, $\langle N \rangle = 10^{16}$ のときの値を求めよ.
+
+## 問題B: 何個でも吸着できる吸着点 (目安25分) {.unnumbered}
+
+講義ノートの例2 (吸着) では, 1つの吸着点に分子は0個か1個しか吸着できなかった. ここでは, 1つの吸着点に分子が何個でも積み重なって吸着できるとする. 吸着点は $N_0$ 個あり, 互いに独立である. 1つの吸着点に分子が $n$ 個 ($n = 0, 1, 2, \dots$) いるときのエネルギーを $-n \varepsilon$ ($\varepsilon > 0$) とする. 吸着分子の化学ポテンシャルを $\mu$ とする.
+
+1. 吸着点1つの大分配関数 $\xi$ を求めよ. また, 和が収束するための $\mu$ の条件を求めよ.
+
+2. 全体の大分配関数は $\Xi = \xi^{N_0}$ である. グランドポテンシャル $\Omega$ を求め, 吸着点1つあたりの平均の分子数 $\langle n \rangle = N_\mathrm{a} / N_0$ ($N_\mathrm{a}$ は吸着分子の総数) を求めよ.
+
+3. 例2の被覆率 $\theta = 1 / \left( e^{-\beta (\varepsilon + \mu)} + 1 \right)$ と, 2. の $\langle n \rangle$ を比べて, 式の形の違いを述べよ.
+
+4. 吸着分子は, 圧力 $P$ の古典理想気体と平衡にある. このとき $e^{\beta \mu} = P \lambda^3 / (k_\mathrm{B} T)$ である (講義ノートの例2). $\langle n \rangle$ を $P$ と
+
+$$
+P_0(T) = \frac{k_\mathrm{B} T}{\lambda^3} e^{-\varepsilon / k_\mathrm{B} T}
+$$
+
+で表せ. また, 1. の条件は $P$ についてのどんな条件になるか.
+
+5. 温度を一定にして, $\langle n \rangle$ を $P$ の関数として図示せよ. 例2の $\theta = P / (P + P_0)$ のグラフと比べ, $P$ が小さいときと $P$ が $P_0$ に近づくときの違いを述べよ. $P \to P_0$ で表面では何が起こっていると考えられるか.
+
+## 問題C: 発展問題 (任意, 加点対象) {.unnumbered}
+
+*この問題は任意である. 解いてレポートに含めた人は, 演習の成績に加点する. 当日の発表には当てず, 翌週の小テストにも出さない.*
+
+問題B で, 1つの吸着点に分子が2個まで吸着できるとする. 2個目の分子は1個目の分子に押されるので, 2個いるときのエネルギーは $-2\varepsilon$ より $U$ ($> 0$) だけ高い.
+
+| 吸着点の状態 | 分子の数 | エネルギー |
+|---|---|---|
+| 空いている | 0 | $0$ |
+| 1個 | 1 | $-\varepsilon$ |
+| 2個 | 2 | $-2\varepsilon + U$ |
+
+吸着分子の化学ポテンシャルを $\mu$ とし, $z = e^{\beta (\varepsilon + \mu)}$ とおく.
+
+1. 吸着点1つの大分配関数 $\xi$ と, 吸着点1つあたりの平均の分子数 $\langle n \rangle$ を $z$ と $\beta U$ で表せ.
+
+2. $U \to \infty$ のとき, $\langle n \rangle$ が例2の被覆率 $\theta$ に一致することを示し, その理由を説明せよ. また, $U$ が有限のとき, $\mu \to \infty$ で $\langle n \rangle$ はいくらに近づくか.
+
+3. $\langle n \rangle = 1$ となる $\mu$ を求め, それが温度によらないことを示せ.
