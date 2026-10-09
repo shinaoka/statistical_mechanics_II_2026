@@ -3,6 +3,7 @@ project:
   output-dir: _book
   resources:
     - videos/
+    - solutions/
   render:
     - index.qmd
     - week01-practice.qmd
