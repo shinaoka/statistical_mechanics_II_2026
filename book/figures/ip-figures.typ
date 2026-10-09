@@ -140,3 +140,52 @@
   line((0.8, 0.9), (2.9, 0.7), stroke: (paint: c-green, thickness: 0.8pt, dash: "dashed"))
   content((1.85, 1.15), text(size: 10pt, fill: c-green)[$n^(-1\/3)$])
 })
+
+// 古典粒子と量子力学の粒子. 古典粒子は軌道を追えば区別できる.
+// 量子力学では波が重なると, 出てきた粒子がどちらだったか区別できない.
+#let trajectory-figure() = cetz.canvas(length: 1cm, {
+  import cetz.draw: *
+  let ball(p, lab, color) = {
+    circle(p, radius: 0.28, fill: color, stroke: none)
+    content(p, text(size: 10pt, fill: white, weight: "bold")[#lab])
+  }
+  // 量子力学の粒子: ぼやけた波束
+  let packet(p, rad, lab) = {
+    for (i, f) in (1.0, 0.75, 0.5, 0.28).enumerate() {
+      circle(p, radius: rad * f, fill: c-blue.transparentize(88% - i * 6%), stroke: none)
+    }
+    if lab != none { content(p, text(size: 11pt, weight: "bold")[#lab]) }
+  }
+  let w = 6.0
+  let h = 3.6
+  let panel(x0, title, note) = {
+    rect((x0, 0), (x0 + w, h), fill: rgb("#f8fafc"), stroke: 1pt + c-gray, radius: 0.15)
+    content((x0 + w / 2, h + 0.4), text(size: 13pt, weight: "bold")[#title])
+    content((x0 + w / 2, -0.45), text(size: 11pt)[#note])
+  }
+  // 古典: 軌道を追える
+  panel(0, [古典力学], [軌道を追えば, どちらが 1 かわかる])
+  let c = (3.0, 1.8)
+  let p1 = ((0.6, 3.1), (1.4, 2.65), (2.2, 2.2), (3.8, 2.2), (4.6, 2.65), (5.4, 3.1))
+  let p2 = ((0.6, 0.5), (1.4, 0.95), (2.2, 1.4), (3.8, 1.4), (4.6, 0.95), (5.4, 0.5))
+  for (pts, col) in ((p1, c-orange), (p2, c-green)) {
+    line(..pts, stroke: (paint: col, thickness: 1.2pt, dash: "dashed"))
+    for (i, p) in pts.enumerate() {
+      if calc.rem(i, 2) == 0 or i == pts.len() - 1 {
+        ball(p, if pts == p1 [1] else [2], col.transparentize(if i == 0 or i == pts.len() - 1 { 0% } else { 55% }))
+      }
+    }
+  }
+  // 量子: 波が重なる
+  let x0 = w + 1.2
+  panel(x0, [量子力学], [波が重なると, どちらが 1 かわからない])
+  packet((x0 + 0.8, 3.0), 0.5, [1])
+  packet((x0 + 0.8, 0.6), 0.5, [2])
+  packet((x0 + 3.0, 1.8), 1.2, none)
+  packet((x0 + 5.2, 3.0), 0.5, [?])
+  packet((x0 + 5.2, 0.6), 0.5, [?])
+  for (a, b) in (((x0 + 1.35, 2.75), (x0 + 2.1, 2.35)), ((x0 + 1.35, 0.85), (x0 + 2.1, 1.25)),
+                 ((x0 + 3.9, 2.35), (x0 + 4.65, 2.75)), ((x0 + 3.9, 1.25), (x0 + 4.65, 0.85))) {
+    line(a, b, mark: (end: "stealth", fill: c-gray), stroke: 1pt + c-gray)
+  }
+})
