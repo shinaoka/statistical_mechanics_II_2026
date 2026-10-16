@@ -83,7 +83,7 @@ aliases:
 |---|---|---|---|---|---|
 | 10/1〜10/8 | | | 統計力学Iの復習 (オンデマンド) | [練習問題](week01-practice.qmd) (提出なし) | |
 | 10/9 | [グランドカノニカル分布](grand-canonical.qmd) | 統計力学Iの復習 (模擬, 成績に入れない. [問題](solutions/week01-mock-test.pdf), [解答](solutions/week01-mock-test-solutions.pdf)) | ガイダンス, グランドカノニカル分布 | [グランドカノニカル分布](week02-exercises.qmd) | 10/15 (木) |
-| 10/16 | [量子気体](identical-particles.qmd) | グランドカノニカル分布 | 量子気体 | 量子気体 | 10/22 (木) |
+| 10/16 | [量子気体](identical-particles.qmd) | グランドカノニカル分布 | 量子気体 | [量子気体](week03-exercises.qmd) | 10/22 (木) |
 | 10/23 | [フェルミ分布とボーズ分布](quantum-distributions.qmd) | 量子気体 | フェルミ分布とボーズ分布 | フェルミ分布とボーズ分布 | 10/29 (木) |
 | 10/30 | [ボーズ・アインシュタイン凝縮](bose-einstein-condensation.qmd) | フェルミ分布とボーズ分布 | ボーズ・アインシュタイン凝縮 | ボーズ・アインシュタイン凝縮 | 11/5 (木) |
 | 11/6 | [フェルミ気体1](fermi-gas-ground-state.qmd) | ボーズ・アインシュタイン凝縮 | フェルミ気体1 | フェルミ気体1 | 11/12 (木) |

@@ -10,6 +10,7 @@ project:
     - grand-canonical.qmd
     - week02-exercises.qmd
     - identical-particles.qmd
+    - week03-exercises.qmd
     - quantum-distributions.qmd
     - bose-einstein-condensation.qmd
     - fermi-gas-ground-state.qmd
@@ -32,6 +33,7 @@ book:
     - grand-canonical.qmd
     - week02-exercises.qmd
     - identical-particles.qmd
+    - week03-exercises.qmd
     - quantum-distributions.qmd
     - bose-einstein-condensation.qmd
     - fermi-gas-ground-state.qmd
