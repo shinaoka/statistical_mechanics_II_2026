@@ -12,6 +12,7 @@ project:
     - identical-particles.qmd
     - week03-exercises.qmd
     - quantum-distributions.qmd
+    - week04-exercises.qmd
     - bose-einstein-condensation.qmd
     - fermi-gas-ground-state.qmd
     - fermi-gas-heat-capacity.qmd
@@ -35,6 +36,7 @@ book:
     - identical-particles.qmd
     - week03-exercises.qmd
     - quantum-distributions.qmd
+    - week04-exercises.qmd
     - bose-einstein-condensation.qmd
     - fermi-gas-ground-state.qmd
     - fermi-gas-heat-capacity.qmd
