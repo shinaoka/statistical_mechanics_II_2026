@@ -167,7 +167,7 @@ $$
 m = \left( \frac{h}{4 b} \right)^{1/3}
 $$
 
-である. 平均場近似の値 $b = N k_\mathrm{B} T_\mathrm{c}/12$, $h = N \mu_\mathrm{B} B$ を入れると $m = (3 \mu_\mathrm{B} B / k_\mathrm{B} T_\mathrm{c})^{1/3}$ となる. $T \neq T_\mathrm{c}$ では $m$ は $h$ に比例して立ち上がる (磁化率が有限) が, $T_\mathrm{c}$ では $h^{1/3}$ と急に立ち上がる.
+である. 平均場近似の値 $b = N k_\mathrm{B} T_\mathrm{c}/12$, $h = N \mu_\mathrm{B} B$ を入れると $m = (3 \mu_\mathrm{B} B / k_\mathrm{B} T_\mathrm{c})^{1/3}$ となる. $T > T_\mathrm{c}$ では $m$ は $h$ に比例して立ち上がる (磁化率が有限. $T < T_\mathrm{c}$ では, 自発磁化 $\pm m_0$ からの変化分が $h$ に比例する) が, $T_\mathrm{c}$ では $h^{1/3}$ と急に立ち上がる.
 
 ### $T < T_\mathrm{c}$ での磁場による転移
 

@@ -1,7 +1,7 @@
 """水の相図 (模式図, 第9回: water-phase) を作る.
 
 使い方: python3 book/figures/phase-diagram.py
-三重点と臨界点は実際の値. 境界線はクラウジウス・クラペイロンの式で近似した模式的なもの.
+三重点と臨界点は実際の値. 蒸発曲線は 100 °C・1気圧も通るように合わせた近似式, ほかの境界線は模式的なもの.
 """
 from pathlib import Path
 
@@ -21,10 +21,11 @@ TT, PT = 273.16, 611.657  # 三重点 (K, Pa)
 TC, PC = 647.1, 22.064e6  # 臨界点
 ATM = 101325.0
 
-# 蒸発曲線: 臨界点を通るように ln P = ln PT - A (1/T - 1/TT) とする
-A = np.log(PC / PT) / (1 / TT - 1 / TC)
+# 蒸発曲線: ln P = a + b/T + c ln T を, 三重点, 100 °C・1気圧, 臨界点の3点を通るように決める
+pts = [(TT, PT), (373.15, ATM), (TC, PC)]
+a, b, c = np.linalg.solve([[1, 1 / t, np.log(t)] for t, _ in pts], [np.log(p) for _, p in pts])
 t_vap = np.linspace(TT, TC, 300)
-p_vap = PT * np.exp(-A * (1 / t_vap - 1 / TT))
+p_vap = np.exp(a + b / t_vap + c * np.log(t_vap))
 # 昇華曲線 (L/R = 6140 K)
 t_sub = np.linspace(200, TT, 100)
 p_sub = PT * np.exp(-6140 * (1 / t_sub - 1 / TT))
