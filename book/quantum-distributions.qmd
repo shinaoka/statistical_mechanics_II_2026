@@ -2,9 +2,16 @@
 title: "フェルミ分布とボーズ分布"
 ---
 
-<!-- 予習動画は未作成. 作ったら grand-canonical.qmd と同じ形で埋め込む. -->
-
 前の章で, 同種粒子の状態は占有数の組 $\{ n_{\boldsymbol{k}} \}$ で表されることを見た. この章では, 相互作用のない同種粒子の集まり (理想量子気体) をグランドカノニカル分布で扱い, 1つの1粒子状態にいる粒子の数の期待値を求める. フェルミ粒子からはフェルミ分布が, ボーズ粒子からはボーズ分布が得られる. 最後に, 1粒子状態についての和を積分に直すための状態密度を導入する.
+
+この章は, 第4回の予習動画 (下) と同じ流れで進み, 動画で省いた計算や説明を補う. 先に動画を見てから読むとよい.
+
+```{=html}
+<video controls preload="metadata" playsinline style="width: 100%; max-width: 960px; aspect-ratio: 16 / 9; background: #000;">
+  <source src="videos/week04.mp4" type="video/mp4">
+  <track kind="subtitles" srclang="ja" label="日本語" src="videos/week04.vtt" default>
+</video>
+```
 
 ボルツマン定数を $k_\mathrm{B}$, 逆温度を $\beta = 1/(k_\mathrm{B} T)$ とする. 前の章と同じく, スピンはまだ考えない.
 
@@ -254,7 +261,9 @@ N = V \int_0^{\infty} \frac{D(\varepsilon)}{e^{\beta (\varepsilon - \mu)} \pm 1}
 E = V \int_0^{\infty} \frac{\varepsilon \, D(\varepsilon)}{e^{\beta (\varepsilon - \mu)} \pm 1} \, d\varepsilon
 $$ {#eq-qd-n-e}
 
-である. 粒子数 $N$ が与えられたときは, 1つ目の式を満たすように $\mu$ を決める. 第2回で述べた「粒子数の期待値が与えられた $N$ になるように $\mu$ を決める」の具体的な形である. 水位のたとえでは, $D(\varepsilon)$ はプールの形 (深さごとの断面積) にあたる.
+である. 粒子数 $N$ が与えられたときは, 1つ目の式を満たすように $\mu$ を決める. 第2回で述べた「粒子数の期待値が与えられた $N$ になるように $\mu$ を決める」の具体的な形である. 水位のたとえでは, $D(\varepsilon)$ はプールの形 (深さごとの断面積) にあたる. 同じ水位 $\mu$ でも, プールの形が違えば水の量 $N$ は違う (@fig-qd-pools).
+
+![形の違うプール (第2回の図の再掲). 水位が $\mu$, プールの形が状態密度 $D(\varepsilon)$, 水の量が $N$ にあたる.](figures/pools.svg){#fig-qd-pools width=45%}
 
 ## 次の章への橋渡し
 
