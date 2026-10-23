@@ -2,7 +2,14 @@
 title: "ボーズ・アインシュタイン凝縮"
 ---
 
-<!-- 予習動画は未作成. 作ったら grand-canonical.qmd と同じ形で埋め込む. -->
+この章は, 第5回の予習動画 (下) と同じ流れで進み, 動画で省いた計算や説明を補う. 先に動画を見てから読むとよい.
+
+```{=html}
+<video controls preload="metadata" playsinline style="width: 100%; max-width: 960px; aspect-ratio: 16 / 9; background: #000;">
+  <source src="videos/week05.mp4" type="video/mp4">
+  <track kind="subtitles" srclang="ja" label="日本語" src="videos/week05.vtt" default>
+</video>
+```
 
 前の章で, 相互作用のないボーズ粒子の分布
 
