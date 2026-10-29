@@ -2,7 +2,14 @@
 title: "フェルミ気体1: 絶対零度のフェルミ気体"
 ---
 
-<!-- 予習動画は未作成. 作ったら grand-canonical.qmd と同じ形で埋め込む. -->
+この章は, 第6回の予習動画 (下) と同じ流れで進み, 動画で省いた計算や説明を補う. 先に動画を見てから読むとよい.
+
+```{=html}
+<video controls preload="metadata" playsinline style="width: 100%; max-width: 960px; aspect-ratio: 16 / 9; background: #000;">
+  <source src="videos/week06.mp4" type="video/mp4">
+  <track kind="subtitles" srclang="ja" label="日本語" src="videos/week06.vtt" default>
+</video>
+```
 
 ここから3回は, 相互作用のないフェルミ粒子の集まり (理想フェルミ気体) を扱う. 主な例は金属の中の伝導電子である. 第3回で見たとおり, 室温の銅の伝導電子は $n \lambda^3 \sim 10^3$ で, 量子効果がきわめて大きい. この章では, まず絶対零度 $T = 0$ の状態を調べる. 次の章で低温の比熱を, その次の章で磁場への応答 (パウリ常磁性) を扱う.
 
