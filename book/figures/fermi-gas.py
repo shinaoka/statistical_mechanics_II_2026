@@ -16,20 +16,22 @@ plt.rcParams["axes.unicode_minus"] = True
 OUT = Path(__file__).parent
 COLORS = ["#1f4e79", "#b03a2e", "#4d6b2f"]
 
-# T = 0 では D(ε) の下を ε_F まで埋める
-e = np.linspace(0, 1.6, 400)
-dos = np.sqrt(e)
+# T = 0 では D(ε) の下を ε_F まで埋める. ε < 0 (バンドの底より下) には状態がなく D = 0
+e = np.linspace(-0.4, 1.6, 801)
+dos = np.sqrt(np.clip(e, 0, None))
 fig, ax = plt.subplots(figsize=(4.6, 3.2))
+ax.axvspan(-0.4, 0, color="0.9", lw=0)
+ax.text(-0.2, 0.75, "状態がない\n" + r"$D(\varepsilon) = 0$", ha="center", va="center", fontsize=10, color="0.3")
 ax.plot(e, dos, color=COLORS[0], lw=2, label=r"$D(\varepsilon)$")
-ax.fill_between(e, 0, np.where(e <= 1, dos, 0), color=COLORS[0], alpha=0.25,
+ax.fill_between(e, 0, np.where((e >= 0) & (e <= 1), dos, 0), color=COLORS[0], alpha=0.25,
                 lw=0, label=r"$D(\varepsilon) f(\varepsilon)$ ($T = 0$)")
 ax.axvline(1, color=COLORS[1], lw=1, ls="--")
 ax.text(1.02, 0.1, r"$\varepsilon_\mathrm{F}$", color=COLORS[1])
 ax.set_xlabel(r"$\varepsilon / \varepsilon_\mathrm{F}$")
 ax.set_ylabel(r"$D(\varepsilon) / D(\varepsilon_\mathrm{F})$")
-ax.set_xlim(0, 1.6)
-ax.set_ylim(0, 1.4)
-ax.legend(frameon=False, fontsize=10, loc="upper left")
+ax.set_xlim(-0.4, 1.6)
+ax.set_ylim(-0.06, 1.4)
+ax.legend(frameon=False, fontsize=10, loc="upper left", bbox_to_anchor=(0.2, 1))
 fig.tight_layout()
 fig.savefig(OUT / "fermi-dos.svg")
 

@@ -70,7 +70,27 @@ $$ {#eq-fg-ef}
 
 となる ($n = N/V$). $\varepsilon_\mathrm{F}$ は密度だけで決まり, 密度が高いほど大きい. 状態密度を使って $N = V \int_0^{\varepsilon_\mathrm{F}} D(\varepsilon) \, d\varepsilon$ を計算しても, 同じ結果になる (@fig-fg-dos).
 
-![状態密度 $D(\varepsilon)$ と, 絶対零度で埋まっている部分 (網かけ). 網かけの面積が密度 $n$ である.](figures/fermi-dos.svg){#fig-fg-dos width=55%}
+![状態密度 $D(\varepsilon)$ と, 絶対零度で埋まっている部分 (網かけ). 網かけの面積が密度 $n$ である. 灰色の $\varepsilon < 0$ には状態がなく, $D(\varepsilon) = 0$ である.](figures/fermi-dos.svg){#fig-fg-dos width=55%}
+
+### $\varepsilon < 0$ では $D(\varepsilon) = 0$
+
+(@eq-fg-dos) は $\varepsilon > 0$ の部分だけを書いた式である. 状態密度は, エネルギーのすべての値 $\varepsilon$ で決まっている量で, 「エネルギーが $\varepsilon$ と $\varepsilon + d\varepsilon$ の間にある1粒子状態の数を $V \, d\varepsilon$ で割ったもの」であった. 自由電子のエネルギー $\hbar^2 |\boldsymbol{k}|^2 / 2m$ は $0$ 以上なので, $\varepsilon < 0$ にはそもそも状態がなく, $D(\varepsilon) = 0$ である (@fig-fg-dos の灰色の部分). 省かずに書くと
+
+$$
+D(\varepsilon) =
+\begin{cases}
+\dfrac{1}{2\pi^2} \left( \dfrac{2m}{\hbar^2} \right)^{3/2} \varepsilon^{1/2} & (\varepsilon > 0) \\
+0 & (\varepsilon < 0)
+\end{cases}
+$$
+
+である. 状態があるエネルギーの範囲のいちばん下 (ここでは $\varepsilon = 0$) を **バンドの底** (バンド端) ということがある. $D(\varepsilon)$ は, バンドの底より下では $0$ である.
+
+$\varepsilon > 0$ の式だけを覚えていると, 次のような場面で間違えやすい.
+
+- 積分 $V \int_0^\infty D(\varepsilon) F(\varepsilon) \, d\varepsilon$ の下限 $0$ は, $D(\varepsilon) = 0$ の範囲を省いたものである. 下限を $-\infty$ にしても同じ値になる.
+- 2次元の状態密度 (第4回の演習問題 A) は「定数」ではなく, $\varepsilon < 0$ で $0$, $\varepsilon > 0$ で定数の階段関数である.
+- バンドの底は $\varepsilon = 0$ とは限らない. 例えば磁場の中では, 電子の磁気モーメントの向きによってエネルギーが $\pm \mu_\mathrm{B} B$ だけずれ, それぞれの向きの状態密度の底もずれる (フェルミ気体3の章). このときも, ずれた底より下では $D(\varepsilon) = 0$ である.
 
 ### フェルミエネルギーで状態密度を書く
 
@@ -98,6 +118,8 @@ $T_\mathrm{F} = \varepsilon_\mathrm{F}/k_\mathrm{B}$ を **フェルミ温度** 
 | フェルミ温度 $T_\mathrm{F}$ | $8.2 \times 10^4 \ \mathrm{K}$ |
 | フェルミ速度 $v_\mathrm{F} = \hbar k_\mathrm{F}/m$ | $1.6 \times 10^6 \ \mathrm{m/s}$ |
 
+エネルギーを温度に直すときは, $1 \ \mathrm{eV} / k_\mathrm{B} = 1.16 \times 10^4 \ \mathrm{K}$ (1 eV はおよそ1万度) を使う. 例えば $\varepsilon_\mathrm{F} = 7.0 \ \mathrm{eV}$ から $T_\mathrm{F} = 7.0 \times 1.16 \times 10^4 \ \mathrm{K} \approx 8.2 \times 10^4 \ \mathrm{K}$ となる.
+
 $T_\mathrm{F}$ は金属が融ける温度よりずっと高い. 室温 ($T / T_\mathrm{F} \approx 0.004$) の金属の電子は, ほぼ $T = 0$ の状態にある. 他の金属でも $\varepsilon_\mathrm{F}$ は数 eV (ナトリウムで $3.2 \ \mathrm{eV}$, アルミニウムで $11.7 \ \mathrm{eV}$) である. フェルミ面の電子は, 光速の $1/200$ 程度の速さで動いている.
 
 ## 絶対零度のエネルギーと圧力
@@ -122,13 +144,23 @@ $$
 P = -\frac{\partial E}{\partial V} = \frac{2}{3} \frac{E}{V} = \frac{2}{5} n \varepsilon_\mathrm{F}
 $$ {#eq-fg-p0}
 
-となる. 絶対零度でも圧力は $0$ にならない. これを **縮退圧** という. 箱を小さくすると $k$ の格子点の間隔 $2\pi/L$ が広がり, 同じ数の電子を詰めるのにより高いエネルギーの状態まで使わなければならないからである. 銅の値を入れると $P \approx 4 \times 10^{10} \ \mathrm{Pa}$ (約 $4 \times 10^5$ 気圧) になる. 実際の金属では, この圧力は電子と正イオンの間のクーロン引力とつり合っている.
+となる. 絶対零度でも圧力は $0$ にならない. これを **縮退圧** という. 箱を小さくすると $k$ の格子点の間隔 $2\pi/L$ が広がり, 同じ数の電子を詰めるのにより高いエネルギーの状態まで使わなければならないからである. 銅の値を入れると $P \approx 4 \times 10^{10} \ \mathrm{Pa}$ (約 $4 \times 10^5$ 気圧) になる.
+
+金属の中では, 原子が外側の電子を手放して正イオンになり, 規則正しく並んで格子をつくっている (@fig-fg-metal). 手放された電子が伝導電子で, イオンの間を自由に動き回る. この章で扱っているのは, この伝導電子の気体である. 電子の縮退圧は電子を外へ押し広げようとし, 電子と正イオンの間のクーロン引力は電子を引きとめる. 実際の金属では, この2つがつり合っている.
+
+![金属の模式図. 正イオンが格子をつくり, 伝導電子がその間を自由に動く.](figures/metal.svg){#fig-fg-metal width=55%}
 
 $PV = \frac{2}{3} E$ は, 古典理想気体の $PV = N k_\mathrm{B} T$, $E = \frac{3}{2} N k_\mathrm{B} T$ でも成り立つ関係である. 実は, $\varepsilon \propto k^2$ の理想気体では, 統計の種類や温度によらず成り立つ (演習問題で示す).
 
 ### 参考: 白色矮星
 
-太陽程度の質量の恒星は, 燃え尽きると白色矮星になる. 白色矮星では, 自分の重力で押しつぶされようとする力を, 電子の縮退圧が支えている. 密度は水の $10^6$ 倍程度で, $T_\mathrm{F}$ は $10^9 \ \mathrm{K}$ を超える.
+太陽程度の質量の恒星は, 燃え尽きると白色矮星になる. 主な成分は炭素と酸素である. 密度がとても高いので, 原子はつぶれて, 原子核と電子がばらばらになっている (@fig-fg-white-dwarf). 質量は太陽程度なのに, 大きさは地球程度しかなく, 密度は水の $10^6$ 倍程度 ($10^9 \ \mathrm{kg/m^3}$ 程度) である.
+
+炭素と酸素では, 原子核の質量 (陽子と中性子の数) の半分ほどの数の電子がある. 密度 $10^9 \ \mathrm{kg/m^3}$ では, 電子の数密度は $n \approx 3 \times 10^{35} \ \mathrm{m^{-3}}$ で, 銅の伝導電子の約 $4 \times 10^6$ 倍である. (@eq-fg-ef) に入れると $\varepsilon_\mathrm{F} \approx 0.2 \ \mathrm{MeV}$, $T_\mathrm{F} \approx 2 \times 10^9 \ \mathrm{K}$ となる. 星の中心の温度は $10^7 \ \mathrm{K}$ 程度なので $T \ll T_\mathrm{F}$ で, 電子は縮退している. 星を押しつぶそうとする重力を支えているのは, 電子の縮退圧である. 原子核の熱運動による圧力 (古典理想気体の $n k_\mathrm{B} T$ 程度) は, これに比べてずっと小さい.
+
+なお, $\varepsilon_\mathrm{F}$ は電子の静止エネルギー $m c^2 = 0.51 \ \mathrm{MeV}$ に近いので, 正確には相対論的な扱いが要る. ここでは大きさの見積もりにとどめる.
+
+![白色矮星の模式図. 炭素と酸素の原子核の間を, 縮退した電子が満たしている. 内向きの重力を, 電子の縮退圧が外向きに支える.](figures/white-dwarf.svg){#fig-fg-white-dwarf width=55%}
 
 ## まとめ
 

@@ -20,9 +20,8 @@
     line((0, y), (2.4, y), stroke: 1.2pt + black)
     if i < filled {
       for (x, up) in ((0.8, true), (1.6, false)) {
-        circle((x, y + 0.22), radius: 0.18, fill: c-blue, stroke: none)
-        let (a, b) = if up { (0.02, 0.5) } else { (0.5, 0.02) }
-        line((x + 0.3, y + a), (x + 0.3, y + b), mark: (end: "stealth", fill: c-red, scale: 0.5), stroke: 1pt + c-red)
+        let (a, b) = if up { (0.06, 0.48) } else { (0.48, 0.06) }
+        line((x, y + a), (x, y + b), mark: (end: "stealth", fill: c-red, scale: 0.7), stroke: 1.5pt + c-red)
       }
     }
   }
@@ -54,4 +53,59 @@
   content((r * 0.4 - 0.05, r * 0.3 + 0.1), anchor: "south-east", box(fill: rgb("#dbeafe"), inset: 2pt, text(size: 13pt, fill: c-red)[$k_"F"$]))
   line((r * 0.71, -r * 0.71), (2.6, -1.9), stroke: 0.8pt + c-blue)
   content((2.65, -1.9), anchor: "west", text(size: 11pt, fill: c-blue)[フェルミ面 ($epsilon_bold(k) = epsilon_"F"$)])
+})
+
+// 金属の模式図: 正イオンが格子をつくり, 伝導電子はその間を自由に動く.
+#let metal-figure() = cetz.canvas(length: 1cm, {
+  import cetz.draw: *
+  let d = 1.1
+  rect((-0.6, -0.6), (4 * d + 0.6, 3 * d + 0.6), fill: rgb("#f8fafc"), stroke: 1pt + c-gray, radius: 0.15)
+  for i in range(5) {
+    for j in range(4) {
+      circle((i * d, j * d), radius: 0.3, fill: rgb("#fed7aa"), stroke: 1pt + c-orange)
+      content((i * d, j * d), text(size: 12pt, fill: c-orange, weight: "bold")[+])
+    }
+  }
+  // 電子は格子の間に散らばる (位置は決めうち)
+  let es = ((0.45, 0.6), (1.7, 0.5), (2.8, 0.65), (3.9, 0.45), (0.6, 1.7), (1.6, 1.55), (2.7, 1.75),
+            (3.8, 1.6), (0.5, 2.8), (1.75, 2.7), (2.85, 2.85), (3.95, 2.7))
+  for e in es {
+    circle(e, radius: 0.1, fill: c-blue, stroke: none)
+  }
+  for (a, b) in (((1.7, 0.5), (1.65, 0.95)), ((2.85, 2.85), (3.3, 2.75)), ((0.6, 1.7), (0.5, 2.15))) {
+    line(a, b, mark: (end: "stealth", fill: c-blue, scale: 0.5), stroke: 0.8pt + c-blue)
+  }
+  content((2 * d, -0.95), anchor: "north", text(size: 11pt)[
+    #text(fill: c-orange)[●] 正イオン (格子をつくる) #h(0.6em) #text(fill: c-blue)[●] 伝導電子 (自由に動く)
+  ])
+})
+
+// 白色矮星の模式図: 炭素と酸素の原子核と縮退した電子. 重力 (内向き) と電子の縮退圧 (外向き) がつり合う.
+#let white-dwarf-figure() = cetz.canvas(length: 1cm, {
+  import cetz.draw: *
+  let r = 2.0
+  circle((0, 0), radius: r, fill: rgb("#eef2ff"), stroke: 1.5pt + c-gray)
+  let nuclei = (((-0.9, 0.8), [C]), ((0.4, 1.1), [O]), ((1.1, 0.1), [C]), ((-0.3, -0.2), [O]),
+                ((-1.2, -0.6), [C]), ((0.6, -1.0), [C]), ((-0.4, -1.3), [O]), ((-0.2, 0.5), [C]))
+  for (p, lab) in nuclei {
+    circle(p, radius: 0.24, fill: rgb("#fed7aa"), stroke: 1pt + c-orange)
+    content(p, text(size: 9pt, fill: c-orange, weight: "bold")[#lab])
+  }
+  let es = ((-0.5, 1.4), (0.9, 0.7), (-1.4, 0.2), (0.2, -0.6), (1.3, -0.6), (-0.8, -1.0), (0.1, 0.0),
+            (-0.6, 0.15), (0.9, 1.4), (0.2, -1.6), (-1.6, -0.2), (1.5, 0.5), (-0.1, 1.6), (1.0, -1.4))
+  for e in es { circle(e, radius: 0.08, fill: c-blue, stroke: none) }
+  // 左: 重力 (内向き), 右: 電子の縮退圧 (外向き)
+  for a in (150deg, 180deg, 210deg) {
+    let (c, s) = (calc.cos(a), calc.sin(a))
+    line((c * (r + 1.0), s * (r + 1.0)), (c * (r + 0.1), s * (r + 0.1)), mark: (end: "stealth", fill: c-gray), stroke: 1.8pt + c-gray)
+  }
+  for a in (-30deg, 0deg, 30deg) {
+    let (c, s) = (calc.cos(a), calc.sin(a))
+    line((c * (r + 0.1), s * (r + 0.1)), (c * (r + 1.0), s * (r + 1.0)), mark: (end: "stealth", fill: c-red), stroke: 1.8pt + c-red)
+  }
+  content((-r - 0.6, -r + 0.2), anchor: "north", text(size: 11pt, fill: c-gray)[重力\ (内向き)])
+  content((r + 0.6, -r + 0.2), anchor: "north", text(size: 11pt, fill: c-red)[電子の縮退圧\ (外向き)])
+  content((0, -r - 1.0), anchor: "north", text(size: 11pt)[
+    #text(fill: c-orange)[●] 炭素 (C), 酸素 (O) の原子核 #h(0.6em) #text(fill: c-blue)[●] 電子
+  ])
 })
