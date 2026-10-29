@@ -11,7 +11,7 @@ $$
 \int_0^{\infty} \frac{d\varepsilon}{e^{\beta (\varepsilon - \mu)} - 1} = -k_\mathrm{B} T \ln \left( 1 - e^{\beta \mu} \right) \quad (\mu < 0)
 $$
 
-## 問題A: 状態密度 (目安15分) {.unnumbered}
+## 問題A: 状態密度 {.unnumbered}
 
 講義ノートでは, $d$ 次元の自由粒子の状態密度 $D(\varepsilon)$ (単位体積あたり) の表を示し, 導出は演習問題とした. 1粒子のエネルギーは $\varepsilon_{\boldsymbol{k}} = \hbar^2 |\boldsymbol{k}|^2 / 2m$ で, 周期境界条件を課す.
 
@@ -21,7 +21,7 @@ $$
 
 3. 3次元の状態密度 $D(\varepsilon) = \frac{1}{4\pi^2} \left( \frac{2m}{\hbar^2} \right)^{3/2} \varepsilon^{1/2}$ を $0$ から $k_\mathrm{B} T$ まで積分し, エネルギーが $k_\mathrm{B} T$ 以下の状態の数が $\frac{4}{3\sqrt{\pi}} \frac{V}{\lambda^3}$ になることを確かめよ (前の章の結果).
 
-## 問題B: 2次元の理想量子気体 (目安30分) {.unnumbered}
+## 問題B: 2次元の理想量子気体 {.unnumbered}
 
 面積 $A$ の平面の上を自由に動く粒子 (質量 $m$) が $N$ 個あり, 温度 $T$ で平衡にある. 数密度を $n = N/A$ とする. 粒子数が与えられたとき, 化学ポテンシャル $\mu$ は
 
