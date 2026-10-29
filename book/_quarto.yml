@@ -14,6 +14,7 @@ project:
     - quantum-distributions.qmd
     - week04-exercises.qmd
     - bose-einstein-condensation.qmd
+    - week05-exercises.qmd
     - fermi-gas-ground-state.qmd
     - fermi-gas-heat-capacity.qmd
     - fermi-gas-pauli.qmd
@@ -38,6 +39,7 @@ book:
     - quantum-distributions.qmd
     - week04-exercises.qmd
     - bose-einstein-condensation.qmd
+    - week05-exercises.qmd
     - fermi-gas-ground-state.qmd
     - fermi-gas-heat-capacity.qmd
     - fermi-gas-pauli.qmd

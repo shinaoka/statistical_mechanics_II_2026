@@ -1,0 +1,78 @@
+---
+title: "第5回の演習問題 (ボーズ・アインシュタイン凝縮)"
+---
+
+10月30日 (金) 2限の演習で解く. はじめの45分はチームの中で相談しながら解き, 残りの45分で発表する. 各チームが発表する小問は, 演習のはじめに2問ずつ示す. 発表する人はチームの中で決める (まだ発表していない人を優先する). 担当した小問だけでなく全部の小問を解き, 発表を聞いて答え合わせをすること. レポートは WebClass に提出する. 締切は **11月5日 (木) 23:59**.
+
+ボルツマン定数を $k_\mathrm{B}$, 逆温度を $\beta = 1/(k_\mathrm{B} T)$ とする. 粒子のスピンは考えない ($g = 1$). 粒子の間に相互作用はない. 熱的ド・ブロイ波長を $\lambda = h / \sqrt{2\pi m k_\mathrm{B} T}$ とする. 3次元の状態密度 (単位体積あたり) は $D(\varepsilon) = \frac{1}{4\pi^2} \left( \frac{2m}{\hbar^2} \right)^{3/2} \varepsilon^{1/2}$ である. 次の公式と数値は使ってよい.
+
+$$
+\int_0^{\infty} \frac{x^{1/2}}{e^x - 1} \, dx = \frac{\sqrt{\pi}}{2} \, \zeta(3/2), \qquad
+\int_0^{\infty} \frac{x^{3/2}}{e^x - 1} \, dx = \frac{3\sqrt{\pi}}{4} \, \zeta(5/2), \qquad
+\zeta(3/2) = 2.612, \quad \zeta(5/2) = 1.341
+$$
+
+$$
+\hbar = 1.055 \times 10^{-34} \ \mathrm{J\,s}, \qquad
+k_\mathrm{B} = 1.381 \times 10^{-23} \ \mathrm{J/K}
+$$
+
+## 問題A: 転移温度 {.unnumbered}
+
+ボーズ・アインシュタイン凝縮がどのくらいの温度で起こるかを, 実際の物質の値で見積もる.
+
+体積 $V$ の箱に $N$ 個のボーズ粒子 (質量 $m$) があり, 数密度を $n = N/V$ とする. 講義ノートでは, $\mu = 0$ のときに励起状態に入れる粒子の数の上限を
+
+$$
+N_\mathrm{max}(T) = V \int_0^{\infty} \frac{D(\varepsilon)}{e^{\beta \varepsilon} - 1} \, d\varepsilon = \zeta(3/2) \, \frac{V}{\lambda^3}
+$$
+
+とし, 係数が $\lambda$ だけで書けることの確認は省いた.
+
+1. $x = \beta \varepsilon$ とおいて積分を計算し, 上の式の右辺になることを確かめよ.
+
+2. $N_\mathrm{max}(T_\mathrm{c}) = N$ から転移温度 $T_\mathrm{c}$ を $n$ と $m$ で表せ. 液体ヘリウム 4 ($m = 6.65 \times 10^{-27} \ \mathrm{kg}$, $n = 2.2 \times 10^{28} \ \mathrm{m^{-3}}$) と, ルビジウム 87 の原子気体 ($m = 1.44 \times 10^{-25} \ \mathrm{kg}$, $n = 1.0 \times 10^{20} \ \mathrm{m^{-3}}$) について, $T_\mathrm{c}$ を有効数字2桁で求めよ. 2つの値が何桁違うか, その主な原因は何かを述べよ.
+
+3. $T = T_\mathrm{c}/2$ のとき, 基底状態にいる粒子の割合 $N_0/N$ を求めよ.
+
+## 問題B: 転移温度より下の熱力学 {.unnumbered}
+
+凝縮した粒子が, エネルギー, エントロピー, 圧力に寄与するかを調べる. 結論を先に言うと, どれにも寄与しない. 凝縮した粒子は, 運動量が0の1つの状態に集まっているからである. その結果, 比熱や圧力が古典理想気体とはまったく違うふるまいをする.
+
+問題A と同じ系で, $T < T_\mathrm{c}$ とする. このとき $\mu = 0$ ($N \to \infty$ の極限) で, 基底状態の粒子はエネルギーを持たない.
+
+1. エネルギー
+   $$
+   E = V \int_0^{\infty} \frac{\varepsilon \, D(\varepsilon)}{e^{\beta \varepsilon} - 1} \, d\varepsilon
+   $$
+   を計算し, $E = \frac{3}{2} \zeta(5/2) \frac{V}{\lambda^3} k_\mathrm{B} T$ を示せ.
+
+2. $V/\lambda^3$ を $N$ と $T/T_\mathrm{c}$ で表して $E$ に入れ, 定積比熱 $C_V = \partial E / \partial T$ を求めよ. $T \to T_\mathrm{c}$ での $C_V$ を数値で求め, 古典理想気体の $\frac{3}{2} N k_\mathrm{B}$ と比べよ.
+
+3. エントロピーを $S(T) = \int_0^T \frac{C_V(T')}{T'} \, dT'$ で求め, $S = \frac{5}{3} \frac{E}{T}$ を示せ. さらに, $S$ が励起状態にいる粒子の数 $N_\mathrm{ex}$ に比例することを示せ. 基底状態に凝縮した粒子がエントロピーに寄与しない理由を説明せよ.
+
+4. ヘルムホルツの自由エネルギー $F = E - TS$ を $V$ と $T$ で表し, 圧力 $P = -(\partial F / \partial V)_{T, N}$ が
+   $$
+   P = \zeta(5/2) \, \frac{k_\mathrm{B} T}{\lambda^3}
+   $$
+   となることを示せ. $P$ は体積 $V$ にも粒子数 $N$ にもよらない. $T$ を一定にして気体を圧縮すると何が起こるか, $N_0$ と $N_\mathrm{ex}$ を使って説明せよ.
+
+## 問題C: 発展問題 (任意, 加点対象) {.unnumbered}
+
+*この問題は任意である. 解いてレポートに含めた人は, 演習の成績に加点する. 当日の発表には当てず, 翌週の小テストにも出さない.*
+
+講義ノートの最後で予告した, 2次元の場合を考える. 面積 $A$ の平面の上の自由なボーズ粒子 $N$ 個を考え, $n = N/A$ とする. 2次元の状態密度は $D = m/(2\pi\hbar^2) = 1/(\lambda^2 k_\mathrm{B} T)$ で, $\varepsilon$ によらない (第4回の演習問題 A).
+
+1. 2次元で, 3次元の $N_\mathrm{max}(T)$ にあたる量
+   $$
+   A \int_0^{\infty} \frac{D}{e^{\beta \varepsilon} - 1} \, d\varepsilon
+   $$
+   が発散することを示せ. このことから, 2次元では $T > 0$ でボーズ・アインシュタイン凝縮が起こらないことを説明し, 第4回の演習問題 B 4. の結果と比べよ.
+
+2. 有限の大きさ $A = L^2$ の箱 (周期境界条件) では, 基底状態の次にエネルギーが低い状態のエネルギーは $\varepsilon_1 = \frac{\hbar^2}{2m} \left( \frac{2\pi}{L} \right)^2$ である. そこで, 励起状態の粒子数を積分の下限を $\varepsilon_1$ にして近似する.
+   $$
+   N_\mathrm{ex} \simeq A \int_{\varepsilon_1}^{\infty} \frac{D}{e^{\beta (\varepsilon - \mu)} - 1} \, d\varepsilon
+   $$
+   $\mu = 0$ として積分し, $k_\mathrm{B} T \gg \varepsilon_1$ のとき $N_\mathrm{ex} \simeq \frac{A}{\lambda^2} \ln \frac{k_\mathrm{B} T}{\varepsilon_1}$ となることを示せ. 第4回の演習問題の公式 $\int_{a}^{\infty} \frac{d\varepsilon}{e^{\beta \varepsilon} - 1} = -k_\mathrm{B} T \ln (1 - e^{-\beta a})$ ($a > 0$) を使ってよい.
+
+3. 2. の $N_\mathrm{ex}$ が $N$ に等しくなる温度を $T^*$ とする. $T^*$ より低い温度では, 3次元と同じように基底状態に巨視的な数の粒子が集まる. $n$ を一定にして $A \to \infty$ とすると $T^* \to 0$ となることを示し, 1. の結論と矛盾しないことを確かめよ.
