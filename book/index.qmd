@@ -84,8 +84,8 @@ aliases:
 | 10/1〜10/8 | | | 統計力学Iの復習 (オンデマンド) | [練習問題](week01-practice.qmd) (提出なし) | |
 | 10/9 | [グランドカノニカル分布](grand-canonical.qmd) | 統計力学Iの復習 (模擬, 成績に入れない. [問題](solutions/week01-mock-test.pdf), [解答](solutions/week01-mock-test-solutions.pdf)) | ガイダンス, グランドカノニカル分布 | [グランドカノニカル分布](week02-exercises.qmd) ([解答](solutions/week02-exercises-solutions.pdf)) | 10/15 (木) |
 | 10/16 | [量子気体](identical-particles.qmd) | グランドカノニカル分布 ([問題](solutions/test-2026-10-16.pdf), [解答](solutions/test-2026-10-16-solutions.pdf)) | 量子気体 | [量子気体](week03-exercises.qmd) ([解答](solutions/week03-exercises-solutions.pdf)) | 10/22 (木) |
-| 10/23 | [フェルミ分布とボーズ分布](quantum-distributions.qmd) | 量子気体 ([問題](solutions/test-2026-10-23.pdf), [解答](solutions/test-2026-10-23-solutions.pdf)) | フェルミ分布とボーズ分布 | [フェルミ分布とボーズ分布](week04-exercises.qmd) | 10/29 (木) |
-| 10/30 | [ボーズ・アインシュタイン凝縮](bose-einstein-condensation.qmd) | フェルミ分布とボーズ分布 | ボーズ・アインシュタイン凝縮 | [ボーズ・アインシュタイン凝縮](week05-exercises.qmd) | 11/5 (木) |
+| 10/23 | [フェルミ分布とボーズ分布](quantum-distributions.qmd) | 量子気体 ([問題](solutions/test-2026-10-23.pdf), [解答](solutions/test-2026-10-23-solutions.pdf)) | フェルミ分布とボーズ分布 | [フェルミ分布とボーズ分布](week04-exercises.qmd) ([解答](solutions/week04-exercises-solutions.pdf)) | 10/29 (木) |
+| 10/30 | [ボーズ・アインシュタイン凝縮](bose-einstein-condensation.qmd) | フェルミ分布とボーズ分布 ([問題](solutions/test-2026-10-30.pdf), [解答](solutions/test-2026-10-30-solutions.pdf)) | ボーズ・アインシュタイン凝縮 | [ボーズ・アインシュタイン凝縮](week05-exercises.qmd) | 11/5 (木) |
 | 11/6 | [フェルミ気体1](fermi-gas-ground-state.qmd) | ボーズ・アインシュタイン凝縮 | フェルミ気体1 | フェルミ気体1 | 11/12 (木) |
 | 11/13 | [フェルミ気体2](fermi-gas-heat-capacity.qmd) | フェルミ気体1 | フェルミ気体2 | フェルミ気体2 | 11/19 (木) |
 | 11/20 | [フェルミ気体3](fermi-gas-pauli.qmd) | フェルミ気体2 | フェルミ気体3 | フェルミ気体3 | **12/3 (木)** |
