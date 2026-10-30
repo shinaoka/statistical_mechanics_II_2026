@@ -7,7 +7,7 @@ title: "フェルミ気体1: 絶対零度のフェルミ気体"
 ```{=html}
 <video controls preload="metadata" playsinline style="width: 100%; max-width: 960px; aspect-ratio: 16 / 9; background: #000;">
   <source src="videos/week06.mp4" type="video/mp4">
-  <track kind="subtitles" srclang="ja" label="日本語" src="videos/week06.vtt" default>
+  <track kind="subtitles" srclang="ja" label="日本語" src="videos/week06.vtt">
 </video>
 ```
 

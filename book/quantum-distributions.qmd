@@ -9,7 +9,7 @@ title: "フェルミ分布とボーズ分布"
 ```{=html}
 <video controls preload="metadata" playsinline style="width: 100%; max-width: 960px; aspect-ratio: 16 / 9; background: #000;">
   <source src="videos/week04.mp4" type="video/mp4">
-  <track kind="subtitles" srclang="ja" label="日本語" src="videos/week04.vtt" default>
+  <track kind="subtitles" srclang="ja" label="日本語" src="videos/week04.vtt">
 </video>
 ```
 

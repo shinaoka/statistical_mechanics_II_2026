@@ -7,7 +7,7 @@ title: "ボーズ・アインシュタイン凝縮"
 ```{=html}
 <video controls preload="metadata" playsinline style="width: 100%; max-width: 960px; aspect-ratio: 16 / 9; background: #000;">
   <source src="videos/week05.mp4" type="video/mp4">
-  <track kind="subtitles" srclang="ja" label="日本語" src="videos/week05.vtt" default>
+  <track kind="subtitles" srclang="ja" label="日本語" src="videos/week05.vtt">
 </video>
 ```
 

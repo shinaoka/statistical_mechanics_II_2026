@@ -11,7 +11,7 @@ title: "第1回の練習問題 (統計力学Iの復習)"
 ```{=html}
 <video controls preload="metadata" playsinline style="width: 100%; max-width: 960px; aspect-ratio: 16 / 9; background: #000;">
   <source src="videos/week01.mp4" type="video/mp4">
-  <track kind="subtitles" srclang="ja" label="日本語" src="videos/week01.vtt" default>
+  <track kind="subtitles" srclang="ja" label="日本語" src="videos/week01.vtt">
 </video>
 ```
 
