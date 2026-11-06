@@ -16,6 +16,7 @@ project:
     - bose-einstein-condensation.qmd
     - week05-exercises.qmd
     - fermi-gas-ground-state.qmd
+    - week06-exercises.qmd
     - fermi-gas-heat-capacity.qmd
     - fermi-gas-pauli.qmd
     - phase-transitions.qmd
@@ -41,6 +42,7 @@ book:
     - bose-einstein-condensation.qmd
     - week05-exercises.qmd
     - fermi-gas-ground-state.qmd
+    - week06-exercises.qmd
     - fermi-gas-heat-capacity.qmd
     - fermi-gas-pauli.qmd
     - phase-transitions.qmd

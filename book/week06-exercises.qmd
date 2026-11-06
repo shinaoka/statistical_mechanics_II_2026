@@ -1,0 +1,75 @@
+---
+title: "第6回の演習問題 (フェルミ気体1: 絶対零度のフェルミ気体)"
+---
+
+11月6日 (金) 2限の演習で解く. はじめの45分はチームの中で相談しながら解き, 残りの45分で発表する. 各チームが発表する小問は, 演習のはじめに2問ずつ示す. 発表する人はチームの中で決める (まだ発表していない人を優先する). 担当した小問だけでなく全部の小問を解き, 発表を聞いて答え合わせをすること. レポートは WebClass に提出する. 締切は **11月12日 (木) 23:59**.
+
+ボルツマン定数を $k_\mathrm{B}$, 逆温度を $\beta = 1/(k_\mathrm{B} T)$ とする. 粒子はスピン $1/2$ の電子 (質量 $m$) で, 1つの $\boldsymbol{k}$ に $\uparrow$ と $\downarrow$ の2個まで入る. 電子の間に相互作用はない. 1粒子のエネルギーは $\varepsilon_{\boldsymbol{k}} = \hbar^2 |\boldsymbol{k}|^2 / 2m$ である. 次の数値は使ってよい.
+
+$$
+\hbar = 1.055 \times 10^{-34} \ \mathrm{J\,s}, \qquad
+m = 9.11 \times 10^{-31} \ \mathrm{kg},
+$$
+
+$$
+k_\mathrm{B} = 1.381 \times 10^{-23} \ \mathrm{J/K}, \qquad
+1 \ \mathrm{eV} = 1.602 \times 10^{-19} \ \mathrm{J}
+$$
+
+## 問題A: 境界条件とフェルミエネルギー {.unnumbered}
+
+講義ノートでは, 周期境界条件 ($k = 2\pi n / L$, $n \in \mathbb{Z}$) で波数を数えて $k_\mathrm{F} = (3\pi^2 n)^{1/3}$ を導いた. 実際の金属の試料には表面があり, 電子は外に出られない. そこで, 箱の壁で波動関数が $0$ になる **固定端条件** で数えなおし, 結果が境界条件によらないことを確かめる.
+
+1. 一辺 $L$ の立方体の箱 ($0 \le x, y, z \le L$) で固定端条件を課すと, 1粒子の波動関数は $\psi \propto \sin k_x x \, \sin k_y y \, \sin k_z z$ で,
+   $$
+   k_x = \frac{\pi n_x}{L}, \quad k_y = \frac{\pi n_y}{L}, \quad k_z = \frac{\pi n_z}{L} \qquad (n_x, n_y, n_z = 1, 2, 3, \dots)
+   $$
+   となる. $n_x$ などに $0$ や負の値を入れない理由を説明せよ. このとき, 半径 $k_\mathrm{F}$ の球の内側にある状態の数を数え (スピンの2倍を含める), $N$ 個の電子を詰めたときの $k_\mathrm{F}$ が周期境界条件と同じ $(3\pi^2 n)^{1/3}$ になることを示せ ($n = N/V$, $L$ は十分大きいとする). 1つの状態が占める $\boldsymbol{k}$ 空間の体積と, 使える $\boldsymbol{k}$ 空間の範囲が, 周期境界条件とどう違うかに注意せよ.
+
+2. 長さ $L$ の1次元の箱に $N$ 個の電子を入れる ($n = N/L$). 1次元では, 和を積分に直さずに, 状態を1つずつ数えて $T = 0$ の $\varepsilon_\mathrm{F}$ (詰まっている状態のいちばん上のエネルギー) を正確に求められる.
+   - 固定端条件 ($k = \pi j / L$, $j = 1, 2, \dots$) で, $N$ が偶数のとき, $\varepsilon_\mathrm{F}$ を $N$ と $L$ で表せ.
+   - 周期境界条件 ($k = 2\pi j / L$, $j = 0, \pm 1, \pm 2, \dots$) で, 下から $j = 0, \pm 1, \dots, \pm J$ までがちょうど埋まっている ($N = 2(2J + 1)$) とき, $\varepsilon_\mathrm{F}$ を $N$ と $L$ で表せ.
+   - 2つの結果は有限の $L$ では一致しないが, $n$ を一定にして $L \to \infty$ とすると, どちらも $\varepsilon_\mathrm{F} = \frac{\hbar^2}{2m} \left( \frac{\pi n}{2} \right)^2$ に近づくことを示せ. また, この値が, 第4回の演習問題 A 1. の1次元の状態密度 (スピンの2倍を含める) から $n = \int_0^{\varepsilon_\mathrm{F}} D(\varepsilon) \, d\varepsilon$ で求めたものと一致することを確かめよ.
+
+3. 2. の固定端条件の場合に, $T = 0$ の全エネルギー $E$ を和のまま正確に計算せよ. $\sum_{j=1}^{J} j^2 = \frac{1}{6} J (J+1)(2J+1)$ を使ってよい. $N \gg 1$ では $E \simeq \frac{1}{3} N \varepsilon_\mathrm{F}$ となることを示し, 状態密度を使って $E = L \int_0^{\varepsilon_\mathrm{F}} \varepsilon D(\varepsilon) \, d\varepsilon$ と計算した結果と比べよ. 3次元の $\frac{3}{5} N \varepsilon_\mathrm{F}$ と係数が違う理由を, 状態密度の形の違いから説明せよ.
+
+4. ナトリウムの伝導電子 ($n = 2.65 \times 10^{28} \ \mathrm{m^{-3}}$) について, $k_\mathrm{F}$, $\varepsilon_\mathrm{F}$ (eV 単位), $T_\mathrm{F}$, フェルミ速度 $v_\mathrm{F} = \hbar k_\mathrm{F} / m$ を有効数字2桁で求めよ. 室温 ($300 \ \mathrm{K}$) の $T / T_\mathrm{F}$ を求め, 室温のナトリウムの電子が縮退しているといえるかを答えよ.
+
+## 問題B: 絶対零度のエネルギーと縮退圧 {.unnumbered}
+
+3次元の体積 $V$ の箱に $N$ 個の電子があるとする. $L$ は十分大きく, 問題A のとおり境界条件によらない結果を使ってよい.
+
+1. $T = 0$ の全エネルギーを, 状態密度を使わずに, フェルミ球の内側での $\boldsymbol{k}$ の積分
+   $$
+   E = 2 \cdot \frac{V}{(2\pi)^3} \int_{|\boldsymbol{k}| \le k_\mathrm{F}} \frac{\hbar^2 |\boldsymbol{k}|^2}{2m} \, d^3 k
+   $$
+   として計算し, $E = \frac{3}{5} N \varepsilon_\mathrm{F}$ を示せ.
+
+2. $T = 0$ では圧力は $P = -(\partial E / \partial V)_N$ で求まる. $P = \frac{2}{5} n \varepsilon_\mathrm{F}$ を示し, 問題A 4. のナトリウムの値を入れて $P$ を Pa と気圧 ($1 \ \mathrm{atm} = 1.013 \times 10^5 \ \mathrm{Pa}$) で求めよ. 同じ密度の古典理想気体の室温 ($300 \ \mathrm{K}$) での圧力 $n k_\mathrm{B} T$ の何倍か.
+
+3. 圧縮しにくさを表す量として, 体積弾性率 $B = -V (\partial P / \partial V)_N$ がある. 電子の気体について $B = \frac{5}{3} P = \frac{2}{3} n \varepsilon_\mathrm{F}$ を示し, ナトリウムの値を求めよ. 実際のナトリウムの体積弾性率はおよそ $6 \times 10^9 \ \mathrm{Pa}$ である. 比べて, 何がいえるかを述べよ.
+
+4. 講義ノートでは, $PV = \frac{2}{3} E$ が $\varepsilon \propto k^2$ の理想気体では統計の種類や温度によらず成り立つ, と予告した. これを示す. フェルミ気体のグランドポテンシャルは
+   $$
+   \Omega = -k_\mathrm{B} T \, V \int_0^{\infty} D(\varepsilon) \ln \left( 1 + e^{-\beta (\varepsilon - \mu)} \right) d\varepsilon, \qquad \Omega = -PV
+   $$
+   である. $D(\varepsilon) \propto \varepsilon^{1/2}$ を使って部分積分し, $\Omega = -\frac{2}{3} E$ を示せ. 境界の項が消えることも確かめること. ボーズ気体 ($\ln$ の中の $+$ を $-$ にし, $\Omega$ の前の符号を $+$ にする) でも同じ結論になることを確かめ, $T = 0$ で 2. の結果と一致することを確かめよ.
+
+## 問題C: 発展問題 (任意, 加点対象) {.unnumbered}
+
+*この問題は任意である. 解いてレポートに含めた人は, 演習の成績に加点する. 当日の発表には当てず, 翌週の小テストにも出さない.*
+
+講義ノートの「参考: 白色矮星」の続きを考える. 白色矮星の電子は $\varepsilon_\mathrm{F}$ が静止エネルギー $mc^2$ に近く, 重い白色矮星ほど密度が高く相対論的になる. ここでは極端な場合として, 1粒子のエネルギーが $\varepsilon_{\boldsymbol{k}} = \hbar c |\boldsymbol{k}|$ (超相対論的極限) の電子の気体を考える. 次の数値は使ってよい.
+
+$$
+c = 3.00 \times 10^8 \ \mathrm{m/s}, \qquad
+G = 6.67 \times 10^{-11} \ \mathrm{N\,m^2/kg^2}, \qquad
+m_\mathrm{p} = 1.67 \times 10^{-27} \ \mathrm{kg}, \qquad
+M_\odot = 2.0 \times 10^{30} \ \mathrm{kg}
+$$
+
+1. $k_\mathrm{F}$ は粒子のエネルギーの式によらず $(3\pi^2 n)^{1/3}$ である理由を述べよ. $T = 0$ で $\varepsilon_\mathrm{F} = \hbar c (3\pi^2 n)^{1/3}$, $E = \frac{3}{4} N \varepsilon_\mathrm{F}$, $P = \frac{1}{3} \frac{E}{V}$ を示せ. $P$ が $n$ の何乗に比例するかを, 非相対論的な場合 ($P \propto n^{5/3}$) と比べよ.
+
+2. 半径 $R$, 質量 $M$ の一様な球の星を考える. 電子1個あたり核子が2個あるとして $M = 2 m_\mathrm{p} N$ とし, 重力のエネルギーを $-\frac{3}{5} G M^2 / R$ とする. 電子のエネルギー $E$ を $N$ と $R$ で表し, 非相対論的な場合 ($E \propto N^{5/3} / R^2$) と超相対論的な場合 ($E \propto N^{4/3} / R$) のそれぞれで, 全エネルギー $E - \frac{3}{5} G M^2 / R$ を $R$ の関数としてグラフの概形をかけ. 非相対論的な場合には, どんな $M$ でもエネルギーが最小になる $R$ があって星が安定に存在できることを示せ.
+
+3. 超相対論的な場合には, $M$ がある値 $M_\mathrm{max}$ より大きいと全エネルギーが $R \to 0$ で $-\infty$ になり, 縮退圧では星を支えられない. $M_\mathrm{max}$ を求め, 太陽質量 $M_\odot$ の何倍かを有効数字1桁で答えよ. (この上限を **チャンドラセカール限界** という. 正確な計算では約 $1.4 M_\odot$ になる.)
