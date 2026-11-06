@@ -2,7 +2,12 @@
 title: "フェルミ気体2: 低温の比熱"
 ---
 
-<!-- 予習動画は未作成. 作ったら grand-canonical.qmd と同じ形で埋め込む. -->
+```{=html}
+<video controls preload="metadata" playsinline style="width: 100%; max-width: 960px; aspect-ratio: 16 / 9; background: #000;">
+  <source src="videos/week07.mp4" type="video/mp4">
+  <track kind="subtitles" srclang="ja" label="日本語" src="videos/week07.vtt">
+</video>
+```
 
 前の章では, 絶対零度のフェルミ気体を調べた. 金属の電子のフェルミ温度は $T_\mathrm{F} \sim 10^4$〜$10^5 \ \mathrm{K}$ なので, 室温でも $T \ll T_\mathrm{F}$ である. この章では, $T \ll T_\mathrm{F}$ の低温で, 化学ポテンシャルとエネルギーが $T = 0$ からどれだけずれるかを計算し, 電子の比熱を求める.
 
